@@ -10,13 +10,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class OrderProduct
- * 
+ *
  * @property int $id
  * @property int $product_id
  * @property int $order_id
  * @property int $pieces
  * @property float $price
- * 
+ *
  * @property Order $order
  * @property Product $product
  *

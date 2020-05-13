@@ -33,7 +33,7 @@ curl -X POST \
     "http://localhost:8000/api/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"password":"labore","email":"delectus"}'
+    -d '{"password":"amet","email":"dolorem"}'
 
 ```
 
@@ -48,8 +48,8 @@ let headers = {
 };
 
 let body = {
-    "password": "labore",
-    "email": "delectus"
+    "password": "amet",
+    "email": "dolorem"
 }
 
 fetch(url, {
@@ -145,7 +145,7 @@ curl -X POST \
     "http://localhost:8000/api/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"qui","email":"animi","password":"reprehenderit"}'
+    -d '{"name":"quam","email":"est","password":"corporis"}'
 
 ```
 
@@ -160,9 +160,9 @@ let headers = {
 };
 
 let body = {
-    "name": "qui",
-    "email": "animi",
-    "password": "reprehenderit"
+    "name": "quam",
+    "email": "est",
+    "password": "corporis"
 }
 
 fetch(url, {
@@ -205,7 +205,7 @@ curl -X POST \
     "http://localhost:8000/api/resetPassword" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"fugiat"}'
+    -d '{"email":"eius"}'
 
 ```
 
@@ -220,7 +220,7 @@ let headers = {
 };
 
 let body = {
-    "email": "fugiat"
+    "email": "eius"
 }
 
 fetch(url, {
@@ -251,13 +251,13 @@ Parameter | Type | Status | Description
     
 <!-- END_b4f4625b609a18310a50b1dddf752a55 -->
 
-<!-- START_50c0a334d57bffdf48ce568bad023ce0 -->
+<!-- START_0bef4e738c9d6720ad43b062015d1078 -->
 ## api/test
 > Example request:
 
 ```bash
-curl -X POST \
-    "http://localhost:8000/api/test" \
+curl -X GET \
+    -G "http://localhost:8000/api/test" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -273,7 +273,7 @@ let headers = {
 };
 
 fetch(url, {
-    method: "POST",
+    method: "GET",
     headers: headers,
 })
     .then(response => response.json())
@@ -281,12 +281,19 @@ fetch(url, {
 ```
 
 
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
 
 ### HTTP Request
-`POST api/test`
+`GET api/test`
 
 
-<!-- END_50c0a334d57bffdf48ce568bad023ce0 -->
+<!-- END_0bef4e738c9d6720ad43b062015d1078 -->
 
 #Address management
 
@@ -299,7 +306,7 @@ APIs for managing addresses
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/addresses?page=18&per_page=6" \
+    -G "http://localhost:8000/api/addresses?page=17&per_page=9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -310,8 +317,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "18",
-    "per_page": "6",
+    "page": "17",
+    "per_page": "9",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -402,7 +409,7 @@ curl -X POST \
     "http://localhost:8000/api/addresses" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"city_id":"qui","zip_code":"et","address":"qui","full_name":"neque","telephone_number":"ab","note":"omnis"}'
+    -d '{"city_id":"et","zip_code":"quibusdam","address":"placeat","full_name":"cumque","telephone_number":"numquam","note":"nam"}'
 
 ```
 
@@ -417,12 +424,12 @@ let headers = {
 };
 
 let body = {
-    "city_id": "qui",
-    "zip_code": "et",
-    "address": "qui",
-    "full_name": "neque",
-    "telephone_number": "ab",
-    "note": "omnis"
+    "city_id": "et",
+    "zip_code": "quibusdam",
+    "address": "placeat",
+    "full_name": "cumque",
+    "telephone_number": "numquam",
+    "note": "nam"
 }
 
 fetch(url, {
@@ -558,7 +565,7 @@ curl -X PUT \
     "http://localhost:8000/api/addresses/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"city_id":"qui","zip_code":"fuga","address":"molestias","full_name":"qui","telephone_number":"quisquam","note":"qui"}'
+    -d '{"city_id":"quisquam","zip_code":"veniam","address":"expedita","full_name":"occaecati","telephone_number":"qui","note":"quaerat"}'
 
 ```
 
@@ -573,12 +580,12 @@ let headers = {
 };
 
 let body = {
-    "city_id": "qui",
-    "zip_code": "fuga",
-    "address": "molestias",
-    "full_name": "qui",
-    "telephone_number": "quisquam",
-    "note": "qui"
+    "city_id": "quisquam",
+    "zip_code": "veniam",
+    "address": "expedita",
+    "full_name": "occaecati",
+    "telephone_number": "qui",
+    "note": "quaerat"
 }
 
 fetch(url, {
@@ -702,7 +709,7 @@ APIs for managing brands
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/brands?page=13&per_page=18" \
+    -G "http://localhost:8000/api/brands?page=10&per_page=19" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -713,8 +720,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "13",
-    "per_page": "18",
+    "page": "10",
+    "per_page": "19",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -740,9 +747,9 @@ fetch(url, {
     "data": [
         {
             "id": 1,
-            "name": "louis vuitton",
-            "alias": "LV",
-            "description": "ОписаниеLouis Vuitton — французский дом моды,\n                специализирующийся на производстве чемоданов и сумок, модной одежды,\n                парфюмерии и аксессуаров класса «люкс» под одноимённой торговой маркой.",
+            "name": "hewlett packard",
+            "alias": "hewlett packard",
+            "description": null,
             "image": "http:\/\/localhost:8000\/storage\/images\/brand\/no_image.jpg",
             "created_at": null,
             "updated_at": null,
@@ -750,9 +757,9 @@ fetch(url, {
         },
         {
             "id": 1,
-            "name": "louis vuitton",
-            "alias": "LV",
-            "description": "ОписаниеLouis Vuitton — французский дом моды,\n                специализирующийся на производстве чемоданов и сумок, модной одежды,\n                парфюмерии и аксессуаров класса «люкс» под одноимённой торговой маркой.",
+            "name": "hewlett packard",
+            "alias": "hewlett packard",
+            "description": null,
             "image": "http:\/\/localhost:8000\/storage\/images\/brand\/no_image.jpg",
             "created_at": null,
             "updated_at": null,
@@ -785,7 +792,7 @@ curl -X POST \
     "http://localhost:8000/api/brands" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"ducimus","alias":"ex","description":"ipsa","image":"rerum"}'
+    -d '{"name":"doloribus","alias":"fuga","description":"sed","image":"asperiores"}'
 
 ```
 
@@ -800,10 +807,10 @@ let headers = {
 };
 
 let body = {
-    "name": "ducimus",
-    "alias": "ex",
-    "description": "ipsa",
-    "image": "rerum"
+    "name": "doloribus",
+    "alias": "fuga",
+    "description": "sed",
+    "image": "asperiores"
 }
 
 fetch(url, {
@@ -822,9 +829,9 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "name": "louis vuitton",
-        "alias": "LV",
-        "description": "ОписаниеLouis Vuitton — французский дом моды,\n                специализирующийся на производстве чемоданов и сумок, модной одежды,\n                парфюмерии и аксессуаров класса «люкс» под одноимённой торговой маркой.",
+        "name": "hewlett packard",
+        "alias": "hewlett packard",
+        "description": null,
         "image": "http:\/\/localhost:8000\/storage\/images\/brand\/no_image.jpg",
         "created_at": null,
         "updated_at": null,
@@ -884,9 +891,9 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "name": "louis vuitton",
-        "alias": "LV",
-        "description": "ОписаниеLouis Vuitton — французский дом моды,\n                специализирующийся на производстве чемоданов и сумок, модной одежды,\n                парфюмерии и аксессуаров класса «люкс» под одноимённой торговой маркой.",
+        "name": "hewlett packard",
+        "alias": "hewlett packard",
+        "description": null,
         "image": "http:\/\/localhost:8000\/storage\/images\/brand\/no_image.jpg",
         "created_at": null,
         "updated_at": null,
@@ -917,7 +924,7 @@ curl -X PUT \
     "http://localhost:8000/api/brands/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"blanditiis","alias":"est","description":"adipisci"}'
+    -d '{"name":"ut","alias":"hic","description":"cupiditate"}'
 
 ```
 
@@ -932,9 +939,9 @@ let headers = {
 };
 
 let body = {
-    "name": "blanditiis",
-    "alias": "est",
-    "description": "adipisci"
+    "name": "ut",
+    "alias": "hic",
+    "description": "cupiditate"
 }
 
 fetch(url, {
@@ -953,9 +960,9 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "name": "louis vuitton",
-        "alias": "LV",
-        "description": "ОписаниеLouis Vuitton — французский дом моды,\n                специализирующийся на производстве чемоданов и сумок, модной одежды,\n                парфюмерии и аксессуаров класса «люкс» под одноимённой торговой маркой.",
+        "name": "hewlett packard",
+        "alias": "hewlett packard",
+        "description": null,
         "image": "http:\/\/localhost:8000\/storage\/images\/brand\/no_image.jpg",
         "created_at": null,
         "updated_at": null,
@@ -1037,6 +1044,265 @@ Parameter | Status | Description
 #Category management
 
 APIs for managing categories
+<!-- START_74aa0c64ad73791d6b27ab5c661d1069 -->
+## Display a listing of the category.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/categoryList" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/categoryList"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Техника и электроника",
+            "alias": "электротехника",
+            "parent_id": null,
+            "keyword": null,
+            "description": null,
+            "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null,
+            "categories": [
+                {
+                    "id": 2,
+                    "name": "Компьютерная техника и ПО",
+                    "alias": "комп",
+                    "parent_id": 1,
+                    "keyword": null,
+                    "description": null,
+                    "image": "http:\/\/localhost:8000\/storage\/images\/category\/12746992_w230_h230_kompyuternaya-tehnika-i.jpg",
+                    "created_at": null,
+                    "updated_at": null,
+                    "deleted_at": null,
+                    "categories": [
+                        {
+                            "id": 3,
+                            "name": "Ноутбуки и нетбуки",
+                            "alias": "ноуты",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/72624213_w230_h230_noutbuki-i-netbuki.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        },
+                        {
+                            "id": 4,
+                            "name": "Мониторы",
+                            "alias": "моник",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/11632477_w230_h230_monitory.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Техника и электроника",
+            "alias": "электротехника",
+            "parent_id": null,
+            "keyword": null,
+            "description": null,
+            "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null,
+            "categories": [
+                {
+                    "id": 2,
+                    "name": "Компьютерная техника и ПО",
+                    "alias": "комп",
+                    "parent_id": 1,
+                    "keyword": null,
+                    "description": null,
+                    "image": "http:\/\/localhost:8000\/storage\/images\/category\/12746992_w230_h230_kompyuternaya-tehnika-i.jpg",
+                    "created_at": null,
+                    "updated_at": null,
+                    "deleted_at": null,
+                    "categories": [
+                        {
+                            "id": 3,
+                            "name": "Ноутбуки и нетбуки",
+                            "alias": "ноуты",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/72624213_w230_h230_noutbuki-i-netbuki.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        },
+                        {
+                            "id": 4,
+                            "name": "Мониторы",
+                            "alias": "моник",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/11632477_w230_h230_monitory.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/categoryList`
+
+
+<!-- END_74aa0c64ad73791d6b27ab5c661d1069 -->
+
+<!-- START_7b63fa6f04d4680168ae9939db428cea -->
+## Display the specified category.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/categoryList1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/categoryList1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "name": "Техника и электроника",
+        "alias": "электротехника",
+        "parent_id": null,
+        "keyword": null,
+        "description": null,
+        "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "categories": [
+            {
+                "id": 2,
+                "name": "Компьютерная техника и ПО",
+                "alias": "комп",
+                "parent_id": 1,
+                "keyword": null,
+                "description": null,
+                "image": "http:\/\/localhost:8000\/storage\/images\/category\/12746992_w230_h230_kompyuternaya-tehnika-i.jpg",
+                "created_at": null,
+                "updated_at": null,
+                "deleted_at": null,
+                "categories": [
+                    {
+                        "id": 3,
+                        "name": "Ноутбуки и нетбуки",
+                        "alias": "ноуты",
+                        "parent_id": 2,
+                        "keyword": null,
+                        "description": null,
+                        "image": "http:\/\/localhost:8000\/storage\/images\/category\/72624213_w230_h230_noutbuki-i-netbuki.jpg",
+                        "created_at": null,
+                        "updated_at": null,
+                        "deleted_at": null,
+                        "categories": []
+                    },
+                    {
+                        "id": 4,
+                        "name": "Мониторы",
+                        "alias": "моник",
+                        "parent_id": 2,
+                        "keyword": null,
+                        "description": null,
+                        "image": "http:\/\/localhost:8000\/storage\/images\/category\/11632477_w230_h230_monitory.jpg",
+                        "created_at": null,
+                        "updated_at": null,
+                        "deleted_at": null,
+                        "categories": []
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+### HTTP Request
+`GET api/categoryList{category}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `id` |  required  | Category Id
+
+<!-- END_7b63fa6f04d4680168ae9939db428cea -->
+
 <!-- START_109013899e0bc43247b0f00b67f889cf -->
 ## Display a listing of the category.
 
@@ -1079,7 +1345,7 @@ fetch(url, {
             "name": "Техника и электроника",
             "alias": "электротехника",
             "parent_id": null,
-            "keyword": "электротехника",
+            "keyword": null,
             "description": null,
             "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
             "created_at": null,
@@ -1088,16 +1354,43 @@ fetch(url, {
             "categories": [
                 {
                     "id": 2,
-                    "name": "Ноутбуки и нетбуки",
-                    "alias": "ноуты",
+                    "name": "Компьютерная техника и ПО",
+                    "alias": "комп",
                     "parent_id": 1,
-                    "keyword": "ноуты",
+                    "keyword": null,
                     "description": null,
-                    "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
+                    "image": "http:\/\/localhost:8000\/storage\/images\/category\/12746992_w230_h230_kompyuternaya-tehnika-i.jpg",
                     "created_at": null,
                     "updated_at": null,
                     "deleted_at": null,
-                    "categories": []
+                    "categories": [
+                        {
+                            "id": 3,
+                            "name": "Ноутбуки и нетбуки",
+                            "alias": "ноуты",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/72624213_w230_h230_noutbuki-i-netbuki.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        },
+                        {
+                            "id": 4,
+                            "name": "Мониторы",
+                            "alias": "моник",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/11632477_w230_h230_monitory.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        }
+                    ]
                 }
             ]
         },
@@ -1106,7 +1399,7 @@ fetch(url, {
             "name": "Техника и электроника",
             "alias": "электротехника",
             "parent_id": null,
-            "keyword": "электротехника",
+            "keyword": null,
             "description": null,
             "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
             "created_at": null,
@@ -1115,16 +1408,43 @@ fetch(url, {
             "categories": [
                 {
                     "id": 2,
-                    "name": "Ноутбуки и нетбуки",
-                    "alias": "ноуты",
+                    "name": "Компьютерная техника и ПО",
+                    "alias": "комп",
                     "parent_id": 1,
-                    "keyword": "ноуты",
+                    "keyword": null,
                     "description": null,
-                    "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
+                    "image": "http:\/\/localhost:8000\/storage\/images\/category\/12746992_w230_h230_kompyuternaya-tehnika-i.jpg",
                     "created_at": null,
                     "updated_at": null,
                     "deleted_at": null,
-                    "categories": []
+                    "categories": [
+                        {
+                            "id": 3,
+                            "name": "Ноутбуки и нетбуки",
+                            "alias": "ноуты",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/72624213_w230_h230_noutbuki-i-netbuki.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        },
+                        {
+                            "id": 4,
+                            "name": "Мониторы",
+                            "alias": "моник",
+                            "parent_id": 2,
+                            "keyword": null,
+                            "description": null,
+                            "image": "http:\/\/localhost:8000\/storage\/images\/category\/11632477_w230_h230_monitory.jpg",
+                            "created_at": null,
+                            "updated_at": null,
+                            "deleted_at": null,
+                            "categories": []
+                        }
+                    ]
                 }
             ]
         }
@@ -1149,7 +1469,7 @@ curl -X POST \
     "http://localhost:8000/api/categories" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"culpa","alias":"aut","parent_id":"tempora","keyword":"veritatis","description":"consequatur","image":"eius"}'
+    -d '{"name":"optio","alias":"aspernatur","parent_id":"vitae","keyword":"explicabo","description":"eligendi","image":"omnis"}'
 
 ```
 
@@ -1164,12 +1484,12 @@ let headers = {
 };
 
 let body = {
-    "name": "culpa",
-    "alias": "aut",
-    "parent_id": "tempora",
-    "keyword": "veritatis",
-    "description": "consequatur",
-    "image": "eius"
+    "name": "optio",
+    "alias": "aspernatur",
+    "parent_id": "vitae",
+    "keyword": "explicabo",
+    "description": "eligendi",
+    "image": "omnis"
 }
 
 fetch(url, {
@@ -1239,7 +1559,7 @@ fetch(url, {
         "name": "Техника и электроника",
         "alias": "электротехника",
         "parent_id": null,
-        "keyword": "электротехника",
+        "keyword": null,
         "description": null,
         "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
         "created_at": null,
@@ -1248,16 +1568,43 @@ fetch(url, {
         "categories": [
             {
                 "id": 2,
-                "name": "Ноутбуки и нетбуки",
-                "alias": "ноуты",
+                "name": "Компьютерная техника и ПО",
+                "alias": "комп",
                 "parent_id": 1,
-                "keyword": "ноуты",
+                "keyword": null,
                 "description": null,
-                "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
+                "image": "http:\/\/localhost:8000\/storage\/images\/category\/12746992_w230_h230_kompyuternaya-tehnika-i.jpg",
                 "created_at": null,
                 "updated_at": null,
                 "deleted_at": null,
-                "categories": []
+                "categories": [
+                    {
+                        "id": 3,
+                        "name": "Ноутбуки и нетбуки",
+                        "alias": "ноуты",
+                        "parent_id": 2,
+                        "keyword": null,
+                        "description": null,
+                        "image": "http:\/\/localhost:8000\/storage\/images\/category\/72624213_w230_h230_noutbuki-i-netbuki.jpg",
+                        "created_at": null,
+                        "updated_at": null,
+                        "deleted_at": null,
+                        "categories": []
+                    },
+                    {
+                        "id": 4,
+                        "name": "Мониторы",
+                        "alias": "моник",
+                        "parent_id": 2,
+                        "keyword": null,
+                        "description": null,
+                        "image": "http:\/\/localhost:8000\/storage\/images\/category\/11632477_w230_h230_monitory.jpg",
+                        "created_at": null,
+                        "updated_at": null,
+                        "deleted_at": null,
+                        "categories": []
+                    }
+                ]
             }
         ]
     }
@@ -1286,7 +1633,7 @@ curl -X PUT \
     "http://localhost:8000/api/categories/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"assumenda","alias":"commodi","parent_id":"nulla","keyword":"possimus","description":"hic"}'
+    -d '{"name":"aut","alias":"voluptas","parent_id":"error","keyword":"voluptatem","description":"earum"}'
 
 ```
 
@@ -1301,11 +1648,11 @@ let headers = {
 };
 
 let body = {
-    "name": "assumenda",
-    "alias": "commodi",
-    "parent_id": "nulla",
-    "keyword": "possimus",
-    "description": "hic"
+    "name": "aut",
+    "alias": "voluptas",
+    "parent_id": "error",
+    "keyword": "voluptatem",
+    "description": "earum"
 }
 
 fetch(url, {
@@ -1327,7 +1674,7 @@ fetch(url, {
         "name": "Техника и электроника",
         "alias": "электротехника",
         "parent_id": null,
-        "keyword": "электротехника",
+        "keyword": null,
         "description": null,
         "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
         "created_at": null,
@@ -1336,16 +1683,43 @@ fetch(url, {
         "categories": [
             {
                 "id": 2,
-                "name": "Ноутбуки и нетбуки",
-                "alias": "ноуты",
+                "name": "Компьютерная техника и ПО",
+                "alias": "комп",
                 "parent_id": 1,
-                "keyword": "ноуты",
+                "keyword": null,
                 "description": null,
-                "image": "http:\/\/localhost:8000\/storage\/images\/category\/no_image.jpg",
+                "image": "http:\/\/localhost:8000\/storage\/images\/category\/12746992_w230_h230_kompyuternaya-tehnika-i.jpg",
                 "created_at": null,
                 "updated_at": null,
                 "deleted_at": null,
-                "categories": []
+                "categories": [
+                    {
+                        "id": 3,
+                        "name": "Ноутбуки и нетбуки",
+                        "alias": "ноуты",
+                        "parent_id": 2,
+                        "keyword": null,
+                        "description": null,
+                        "image": "http:\/\/localhost:8000\/storage\/images\/category\/72624213_w230_h230_noutbuki-i-netbuki.jpg",
+                        "created_at": null,
+                        "updated_at": null,
+                        "deleted_at": null,
+                        "categories": []
+                    },
+                    {
+                        "id": 4,
+                        "name": "Мониторы",
+                        "alias": "моник",
+                        "parent_id": 2,
+                        "keyword": null,
+                        "description": null,
+                        "image": "http:\/\/localhost:8000\/storage\/images\/category\/11632477_w230_h230_monitory.jpg",
+                        "created_at": null,
+                        "updated_at": null,
+                        "deleted_at": null,
+                        "categories": []
+                    }
+                ]
             }
         ]
     }
@@ -1435,7 +1809,7 @@ APIs for managing cities
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/cities?page=16&per_page=17" \
+    -G "http://localhost:8000/api/cities?page=11&per_page=12" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1446,8 +1820,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "16",
-    "per_page": "17",
+    "page": "11",
+    "per_page": "12",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1516,7 +1890,7 @@ curl -X POST \
     "http://localhost:8000/api/cities" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"quam","region_id":"totam","zip_code":"a"}'
+    -d '{"name":"ea","region_id":"totam","zip_code":"et"}'
 
 ```
 
@@ -1531,9 +1905,9 @@ let headers = {
 };
 
 let body = {
-    "name": "quam",
+    "name": "ea",
     "region_id": "totam",
-    "zip_code": "a"
+    "zip_code": "et"
 }
 
 fetch(url, {
@@ -1643,7 +2017,7 @@ curl -X PUT \
     "http://localhost:8000/api/cities/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"doloribus","region_id":"voluptates","zip_code":"rerum"}'
+    -d '{"name":"similique","region_id":"facere","zip_code":"quia"}'
 
 ```
 
@@ -1658,9 +2032,9 @@ let headers = {
 };
 
 let body = {
-    "name": "doloribus",
-    "region_id": "voluptates",
-    "zip_code": "rerum"
+    "name": "similique",
+    "region_id": "facere",
+    "zip_code": "quia"
 }
 
 fetch(url, {
@@ -1770,7 +2144,7 @@ APIs for managing currency
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/currencies?page=6&per_page=17" \
+    -G "http://localhost:8000/api/currencies?page=15&per_page=3" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1781,8 +2155,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "6",
-    "per_page": "17",
+    "page": "15",
+    "per_page": "3",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1809,7 +2183,7 @@ fetch(url, {
         {
             "id": 1,
             "created_at": null,
-            "updated_at": "2020-04-19T15:49:10.000000Z",
+            "updated_at": null,
             "name": "Тенге",
             "code": "KZT",
             "symbol_left": null,
@@ -1821,7 +2195,7 @@ fetch(url, {
         {
             "id": 1,
             "created_at": null,
-            "updated_at": "2020-04-19T15:49:10.000000Z",
+            "updated_at": null,
             "name": "Тенге",
             "code": "KZT",
             "symbol_left": null,
@@ -1857,7 +2231,7 @@ curl -X POST \
     "http://localhost:8000/api/currencies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"beatae","code":"qui","symbol_left":"praesentium","symbol_right":"voluptas","value":"sed","base":"qui"}'
+    -d '{"name":"sit","code":"possimus","symbol_left":"perspiciatis","symbol_right":"quia","value":"sed","base":"cumque"}'
 
 ```
 
@@ -1872,12 +2246,12 @@ let headers = {
 };
 
 let body = {
-    "name": "beatae",
-    "code": "qui",
-    "symbol_left": "praesentium",
-    "symbol_right": "voluptas",
+    "name": "sit",
+    "code": "possimus",
+    "symbol_left": "perspiciatis",
+    "symbol_right": "quia",
     "value": "sed",
-    "base": "qui"
+    "base": "cumque"
 }
 
 fetch(url, {
@@ -1897,7 +2271,7 @@ fetch(url, {
     "data": {
         "id": 1,
         "created_at": null,
-        "updated_at": "2020-04-19T15:49:10.000000Z",
+        "updated_at": null,
         "name": "Тенге",
         "code": "KZT",
         "symbol_left": null,
@@ -1963,7 +2337,7 @@ fetch(url, {
     "data": {
         "id": 1,
         "created_at": null,
-        "updated_at": "2020-04-19T15:49:10.000000Z",
+        "updated_at": null,
         "name": "Тенге",
         "code": "KZT",
         "symbol_left": null,
@@ -1996,7 +2370,7 @@ curl -X PUT \
     "http://localhost:8000/api/currencies/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"deleniti","code":"molestias","symbol_left":"voluptatem","symbol_right":"aut","value":"repudiandae","base":"quia"}'
+    -d '{"name":"velit","code":"consequuntur","symbol_left":"voluptatum","symbol_right":"recusandae","value":"quisquam","base":"alias"}'
 
 ```
 
@@ -2011,12 +2385,12 @@ let headers = {
 };
 
 let body = {
-    "name": "deleniti",
-    "code": "molestias",
-    "symbol_left": "voluptatem",
-    "symbol_right": "aut",
-    "value": "repudiandae",
-    "base": "quia"
+    "name": "velit",
+    "code": "consequuntur",
+    "symbol_left": "voluptatum",
+    "symbol_right": "recusandae",
+    "value": "quisquam",
+    "base": "alias"
 }
 
 fetch(url, {
@@ -2036,7 +2410,7 @@ fetch(url, {
     "data": {
         "id": 1,
         "created_at": null,
-        "updated_at": "2020-04-19T15:49:10.000000Z",
+        "updated_at": null,
         "name": "Тенге",
         "code": "KZT",
         "symbol_left": null,
@@ -2124,7 +2498,7 @@ Parameter | Status | Description
 #FilterGroup management
 
 APIs for managing filter groups
-<!-- START_ea79b130426ba62aa89eb615fe141273 -->
+<!-- START_69f503d19a6c39ec1b307b3ac561b5c3 -->
 ## Display a listing of the FilterGroup.
 
 <br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
@@ -2132,19 +2506,19 @@ APIs for managing filter groups
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/filterGroups?page=2&per_page=15" \
+    -G "http://localhost:8000/api/filterList?page=4&per_page=13" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/filterGroups"
+    "http://localhost:8000/api/filterList"
 );
 
 let params = {
-    "page": "2",
-    "per_page": "15",
+    "page": "4",
+    "per_page": "13",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -2181,6 +2555,16 @@ fetch(url, {
                     "id": 2,
                     "value": "черный",
                     "filter_group_id": 1
+                },
+                {
+                    "id": 9,
+                    "value": "серый",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 10,
+                    "value": "красный",
+                    "filter_group_id": 1
                 }
             ]
         },
@@ -2196,6 +2580,128 @@ fetch(url, {
                 {
                     "id": 2,
                     "value": "черный",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 9,
+                    "value": "серый",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 10,
+                    "value": "красный",
+                    "filter_group_id": 1
+                }
+            ]
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/filterList`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `page` |  required  | The page number. default = 1
+    `per_page` |  required  | The number of items per list. default = 15
+
+<!-- END_69f503d19a6c39ec1b307b3ac561b5c3 -->
+
+<!-- START_ea79b130426ba62aa89eb615fe141273 -->
+## Display a listing of the FilterGroup.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/filterGroups?page=16&per_page=16" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/filterGroups"
+);
+
+let params = {
+    "page": "16",
+    "per_page": "16",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Цвет",
+            "filter_values": [
+                {
+                    "id": 1,
+                    "value": "белый",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 2,
+                    "value": "черный",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 9,
+                    "value": "серый",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 10,
+                    "value": "красный",
+                    "filter_group_id": 1
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Цвет",
+            "filter_values": [
+                {
+                    "id": 1,
+                    "value": "белый",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 2,
+                    "value": "черный",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 9,
+                    "value": "серый",
+                    "filter_group_id": 1
+                },
+                {
+                    "id": 10,
+                    "value": "красный",
                     "filter_group_id": 1
                 }
             ]
@@ -2227,7 +2733,7 @@ curl -X POST \
     "http://localhost:8000/api/filterGroups" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"tenetur"}'
+    -d '{"name":"rem"}'
 
 ```
 
@@ -2242,7 +2748,7 @@ let headers = {
 };
 
 let body = {
-    "name": "tenetur"
+    "name": "rem"
 }
 
 fetch(url, {
@@ -2271,6 +2777,16 @@ fetch(url, {
             {
                 "id": 2,
                 "value": "черный",
+                "filter_group_id": 1
+            },
+            {
+                "id": 9,
+                "value": "серый",
+                "filter_group_id": 1
+            },
+            {
+                "id": 10,
+                "value": "красный",
                 "filter_group_id": 1
             }
         ]
@@ -2337,6 +2853,16 @@ fetch(url, {
                 "id": 2,
                 "value": "черный",
                 "filter_group_id": 1
+            },
+            {
+                "id": 9,
+                "value": "серый",
+                "filter_group_id": 1
+            },
+            {
+                "id": 10,
+                "value": "красный",
+                "filter_group_id": 1
             }
         ]
     }
@@ -2365,7 +2891,7 @@ curl -X PUT \
     "http://localhost:8000/api/filterGroups/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"filter_group_id":"assumenda","value":"esse"}'
+    -d '{"filter_group_id":"sed","value":"reprehenderit"}'
 
 ```
 
@@ -2380,8 +2906,8 @@ let headers = {
 };
 
 let body = {
-    "filter_group_id": "assumenda",
-    "value": "esse"
+    "filter_group_id": "sed",
+    "value": "reprehenderit"
 }
 
 fetch(url, {
@@ -2410,6 +2936,16 @@ fetch(url, {
             {
                 "id": 2,
                 "value": "черный",
+                "filter_group_id": 1
+            },
+            {
+                "id": 9,
+                "value": "серый",
+                "filter_group_id": 1
+            },
+            {
+                "id": 10,
+                "value": "красный",
                 "filter_group_id": 1
             }
         ]
@@ -2497,7 +3033,7 @@ APIs for managing filer values
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/filterValues?page=8&per_page=2" \
+    -G "http://localhost:8000/api/filterValues?page=16&per_page=9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -2508,8 +3044,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "8",
-    "per_page": "2",
+    "page": "16",
+    "per_page": "9",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -2570,7 +3106,7 @@ curl -X POST \
     "http://localhost:8000/api/filterValues" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"filter_group_id":"neque","value":"occaecati"}'
+    -d '{"filter_group_id":"nisi","value":"aut"}'
 
 ```
 
@@ -2585,8 +3121,8 @@ let headers = {
 };
 
 let body = {
-    "filter_group_id": "neque",
-    "value": "occaecati"
+    "filter_group_id": "nisi",
+    "value": "aut"
 }
 
 fetch(url, {
@@ -2688,7 +3224,7 @@ curl -X PUT \
     "http://localhost:8000/api/filterValues/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"filter_group_id":"dolores","value":"earum"}'
+    -d '{"filter_group_id":"perferendis","value":"ex"}'
 
 ```
 
@@ -2703,8 +3239,8 @@ let headers = {
 };
 
 let body = {
-    "filter_group_id": "dolores",
-    "value": "earum"
+    "filter_group_id": "perferendis",
+    "value": "ex"
 }
 
 fetch(url, {
@@ -2801,6 +3337,50 @@ Parameter | Status | Description
 #Order management
 
 APIs for managing addresses
+<!-- START_ccd5a3480be78f75d73b0ef8a486a00f -->
+## api/userAddresses
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/userAddresses" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/userAddresses"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET api/userAddresses`
+
+
+<!-- END_ccd5a3480be78f75d73b0ef8a486a00f -->
+
 <!-- START_f9301c03a9281c0847565f96e6f723de -->
 ## Display a listing of the order.
 
@@ -2809,7 +3389,7 @@ APIs for managing addresses
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/orders?page=2&per_page=5" \
+    -G "http://localhost:8000/api/orders?page=7&per_page=9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -2820,8 +3400,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "2",
-    "per_page": "5",
+    "page": "7",
+    "per_page": "9",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -2892,7 +3472,7 @@ curl -X POST \
     "http://localhost:8000/api/orders" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":"et","status":"quidem","currency_id":"sint","address_id":"dolor","products":[]}'
+    -d '{"user_id":"ut","status":"est","currency_id":"est","address_id":"possimus","products":[]}'
 
 ```
 
@@ -2907,10 +3487,10 @@ let headers = {
 };
 
 let body = {
-    "user_id": "et",
-    "status": "quidem",
-    "currency_id": "sint",
-    "address_id": "dolor",
+    "user_id": "ut",
+    "status": "est",
+    "currency_id": "est",
+    "address_id": "possimus",
     "products": []
 }
 
@@ -3026,7 +3606,7 @@ curl -X PUT \
     "http://localhost:8000/api/orders/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":"pariatur","status":"velit","currency_id":"velit","address_id":"qui"}'
+    -d '{"user_id":"reprehenderit","status":"corporis","currency_id":"at","address_id":"ex"}'
 
 ```
 
@@ -3041,10 +3621,10 @@ let headers = {
 };
 
 let body = {
-    "user_id": "pariatur",
-    "status": "velit",
-    "currency_id": "velit",
-    "address_id": "qui"
+    "user_id": "reprehenderit",
+    "status": "corporis",
+    "currency_id": "at",
+    "address_id": "ex"
 }
 
 fetch(url, {
@@ -3145,6 +3725,344 @@ Parameter | Status | Description
 
 <!-- END_c280b55cf267ef09fc12c6b09ac78ede -->
 
+<!-- START_75f7d70f4c8465de335083081ac3cadb -->
+## Display a listing of the order.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/userOrders?page=17&per_page=8" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/userOrders"
+);
+
+let params = {
+    "page": "17",
+    "per_page": "8",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "status": "0",
+            "currency_id": 1,
+            "address_id": 1,
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null
+        },
+        {
+            "id": 1,
+            "user_id": 1,
+            "status": "0",
+            "currency_id": 1,
+            "address_id": 1,
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/userOrders`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `page` |  required  | The page number. default = 1
+    `per_page` |  required  | The number of items per list. default = 15
+
+<!-- END_75f7d70f4c8465de335083081ac3cadb -->
+
+<!-- START_212f593cde90f8df1a197d6b1a3005ce -->
+## Store a newly created order in storage.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost:8000/api/userOrders" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"address_id":"natus","products":[]}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/userOrders"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "address_id": "natus",
+    "products": []
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "user_id": 1,
+        "status": "0",
+        "currency_id": 1,
+        "address_id": 1,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`POST api/userOrders`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `address_id` | numeric |  required  | Address Id
+        `products` | array |  required  | Array of Products json objects with id,prices,pieces parameters
+    
+<!-- END_212f593cde90f8df1a197d6b1a3005ce -->
+
+<!-- START_939950e23d4898fab46f2d1467dbd637 -->
+## Display the specified order.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/userOrders/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/userOrders/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "user_id": 1,
+        "status": "0",
+        "currency_id": 1,
+        "address_id": 1,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`GET api/userOrders/{userOrder}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `id` |  required  | Order Id
+
+<!-- END_939950e23d4898fab46f2d1467dbd637 -->
+
+<!-- START_3eb218ebd10874e4dca15fe144c31d26 -->
+## Update the specified order in storage.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost:8000/api/userOrders/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"user_id":"minima","status":"ratione","currency_id":"iure","address_id":"sit"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/userOrders/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "minima",
+    "status": "ratione",
+    "currency_id": "iure",
+    "address_id": "sit"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "user_id": 1,
+        "status": "0",
+        "currency_id": 1,
+        "address_id": 1,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`PUT api/userOrders/{userOrder}`
+
+`PATCH api/userOrders/{userOrder}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `id` |  required  | Address's Id to be Updated
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `user_id` | numeric |  optional  | User Id
+        `status` | enum[0,1,2] |  optional  | Status ,one of the 0,1,2
+        `currency_id` | numeric |  optional  | Currency Id
+        `address_id` | numeric |  optional  | Address Id
+    
+<!-- END_3eb218ebd10874e4dca15fe144c31d26 -->
+
+<!-- START_2dc8592fb81c319bd03cdbd381500fe1 -->
+## Remove the specified Order from storage.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost:8000/api/userOrders/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/userOrders/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "message": "Order Deleted"
+}
+```
+
+### HTTP Request
+`DELETE api/userOrders/{userOrder}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `id` |  optional  | Order's Id to be Deleted
+
+<!-- END_2dc8592fb81c319bd03cdbd381500fe1 -->
+
 #ProductImage management
 
 APIs for managing product images
@@ -3156,7 +4074,7 @@ APIs for managing product images
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/productImages?page=20&per_page=16" \
+    -G "http://localhost:8000/api/productImages?page=7&per_page=3" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3167,8 +4085,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "20",
-    "per_page": "16",
+    "page": "7",
+    "per_page": "3",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3221,7 +4139,7 @@ curl -X POST \
     "http://localhost:8000/api/productImages" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"product_id":"voluptates","image":"magnam"}'
+    -d '{"product_id":"voluptas","image":"temporibus"}'
 
 ```
 
@@ -3236,8 +4154,8 @@ let headers = {
 };
 
 let body = {
-    "product_id": "voluptates",
-    "image": "magnam"
+    "product_id": "voluptas",
+    "image": "temporibus"
 }
 
 fetch(url, {
@@ -3350,7 +4268,7 @@ curl -X PUT \
     "http://localhost:8000/api/productImages/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"product_id":"iusto"}'
+    -d '{"product_id":"ab"}'
 
 ```
 
@@ -3365,7 +4283,7 @@ let headers = {
 };
 
 let body = {
-    "product_id": "iusto"
+    "product_id": "ab"
 }
 
 fetch(url, {
@@ -3487,7 +4405,7 @@ curl -X POST \
     "http://localhost:8000/api/products/setImage/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"image":"est"}'
+    -d '{"image":"voluptatem"}'
 
 ```
 
@@ -3502,7 +4420,7 @@ let headers = {
 };
 
 let body = {
-    "image": "est"
+    "image": "voluptatem"
 }
 
 fetch(url, {
@@ -3521,16 +4439,16 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "status": "0",
+        "status": "1",
         "name": "Ноутбук HP 2RR85EA ProBook",
         "alias": "HP-2RR85EA",
         "description": null,
         "content": null,
-        "brand_id": 3,
+        "brand_id": 1,
         "price": 441590,
         "keywords": null,
         "is_hit": false,
-        "image": "http:\/\/localhost:8000\/storage\/images\/product\/no_image.jpg",
+        "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
         "pieces_left": 0,
         "created_at": null,
         "updated_at": null,
@@ -3549,7 +4467,7 @@ Parameter | Type | Status | Description
     
 <!-- END_5f9c9dbd06a36a2dcc6b6838c5ed6f81 -->
 
-<!-- START_86e0ac5d4f8ce9853bc22fd08f2a0109 -->
+<!-- START_1ef07b0ecf45b714ae20bddaef2adcf6 -->
 ## Display a listing of the product.
 
 <br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
@@ -3557,24 +4475,24 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/products?page=12&per_page=19&categories=expedita&filter_values=autem&brand=voluptatum&price_from=animi&price_to=neque" \
+    -G "http://localhost:8000/api/productList?page=8&per_page=18&categories=molestiae&filter_values=amet&brand=velit&price_from=laborum&price_to=natus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/products"
+    "http://localhost:8000/api/productList"
 );
 
 let params = {
-    "page": "12",
-    "per_page": "19",
-    "categories": "expedita",
-    "filter_values": "autem",
-    "brand": "voluptatum",
-    "price_from": "animi",
-    "price_to": "neque",
+    "page": "8",
+    "per_page": "18",
+    "categories": "molestiae",
+    "filter_values": "amet",
+    "brand": "velit",
+    "price_from": "laborum",
+    "price_to": "natus",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3600,16 +4518,16 @@ fetch(url, {
     "data": [
         {
             "id": 1,
-            "status": "0",
+            "status": "1",
             "name": "Ноутбук HP 2RR85EA ProBook",
             "alias": "HP-2RR85EA",
             "description": null,
             "content": null,
-            "brand_id": 3,
+            "brand_id": 1,
             "price": 441590,
             "keywords": null,
             "is_hit": false,
-            "image": "http:\/\/localhost:8000\/storage\/images\/product\/no_image.jpg",
+            "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
             "pieces_left": 0,
             "created_at": null,
             "updated_at": null,
@@ -3617,16 +4535,187 @@ fetch(url, {
         },
         {
             "id": 1,
-            "status": "0",
+            "status": "1",
             "name": "Ноутбук HP 2RR85EA ProBook",
             "alias": "HP-2RR85EA",
             "description": null,
             "content": null,
-            "brand_id": 3,
+            "brand_id": 1,
             "price": 441590,
             "keywords": null,
             "is_hit": false,
-            "image": "http:\/\/localhost:8000\/storage\/images\/product\/no_image.jpg",
+            "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
+            "pieces_left": 0,
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/productList`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `page` |  required  | The page number. default = 1
+    `per_page` |  required  | The number of items per list. default = 15
+    `categories` |  optional  | Category Ids
+    `filter_values` |  optional  | Filter Value Ids
+    `brand` |  optional  | Brand Id
+    `price_from` |  optional  | Min Price
+    `price_to` |  optional  | Max Price
+
+<!-- END_1ef07b0ecf45b714ae20bddaef2adcf6 -->
+
+<!-- START_d07c8e17d36c80e420fbc4ac7f728178 -->
+## Display the specified product.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/productList/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/productList/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "status": "1",
+        "name": "Ноутбук HP 2RR85EA ProBook",
+        "alias": "HP-2RR85EA",
+        "description": null,
+        "content": null,
+        "brand_id": 1,
+        "price": 441590,
+        "keywords": null,
+        "is_hit": false,
+        "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
+        "pieces_left": 0,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`GET api/productList/{product}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `id` |  required  | Product Id
+
+<!-- END_d07c8e17d36c80e420fbc4ac7f728178 -->
+
+<!-- START_86e0ac5d4f8ce9853bc22fd08f2a0109 -->
+## Display a listing of the product.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost:8000/api/products?page=13&per_page=2&categories=in&filter_values=laborum&brand=consequuntur&price_from=harum&price_to=sunt" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/products"
+);
+
+let params = {
+    "page": "13",
+    "per_page": "2",
+    "categories": "in",
+    "filter_values": "laborum",
+    "brand": "consequuntur",
+    "price_from": "harum",
+    "price_to": "sunt",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "status": "1",
+            "name": "Ноутбук HP 2RR85EA ProBook",
+            "alias": "HP-2RR85EA",
+            "description": null,
+            "content": null,
+            "brand_id": 1,
+            "price": 441590,
+            "keywords": null,
+            "is_hit": false,
+            "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
+            "pieces_left": 0,
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null
+        },
+        {
+            "id": 1,
+            "status": "1",
+            "name": "Ноутбук HP 2RR85EA ProBook",
+            "alias": "HP-2RR85EA",
+            "description": null,
+            "content": null,
+            "brand_id": 1,
+            "price": 441590,
+            "keywords": null,
+            "is_hit": false,
+            "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
             "pieces_left": 0,
             "created_at": null,
             "updated_at": null,
@@ -3664,7 +4753,7 @@ curl -X POST \
     "http://localhost:8000/api/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"possimus","alias":"qui","description":"voluptas","content":"illum","brand_id":"est","price":"dolores","keywords":"voluptatem","image":"consequatur","product_images":"sapiente","pieces_left":"aperiam","status":"iusto"}'
+    -d '{"name":"impedit","alias":"dicta","description":"natus","content":"rerum","brand_id":"tenetur","price":"amet","keywords":"est","image":"repellat","product_images":"omnis","pieces_left":"tempora","status":"dolore"}'
 
 ```
 
@@ -3679,17 +4768,17 @@ let headers = {
 };
 
 let body = {
-    "name": "possimus",
-    "alias": "qui",
-    "description": "voluptas",
-    "content": "illum",
-    "brand_id": "est",
-    "price": "dolores",
-    "keywords": "voluptatem",
-    "image": "consequatur",
-    "product_images": "sapiente",
-    "pieces_left": "aperiam",
-    "status": "iusto"
+    "name": "impedit",
+    "alias": "dicta",
+    "description": "natus",
+    "content": "rerum",
+    "brand_id": "tenetur",
+    "price": "amet",
+    "keywords": "est",
+    "image": "repellat",
+    "product_images": "omnis",
+    "pieces_left": "tempora",
+    "status": "dolore"
 }
 
 fetch(url, {
@@ -3708,16 +4797,16 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "status": "0",
+        "status": "1",
         "name": "Ноутбук HP 2RR85EA ProBook",
         "alias": "HP-2RR85EA",
         "description": null,
         "content": null,
-        "brand_id": 3,
+        "brand_id": 1,
         "price": 441590,
         "keywords": null,
         "is_hit": false,
-        "image": "http:\/\/localhost:8000\/storage\/images\/product\/no_image.jpg",
+        "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
         "pieces_left": 0,
         "created_at": null,
         "updated_at": null,
@@ -3784,16 +4873,16 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "status": "0",
+        "status": "1",
         "name": "Ноутбук HP 2RR85EA ProBook",
         "alias": "HP-2RR85EA",
         "description": null,
         "content": null,
-        "brand_id": 3,
+        "brand_id": 1,
         "price": 441590,
         "keywords": null,
         "is_hit": false,
-        "image": "http:\/\/localhost:8000\/storage\/images\/product\/no_image.jpg",
+        "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
         "pieces_left": 0,
         "created_at": null,
         "updated_at": null,
@@ -3824,7 +4913,7 @@ curl -X PUT \
     "http://localhost:8000/api/products/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"odit","alias":"assumenda","description":"laboriosam","content":"eum","brand_id":"ducimus","price":"magnam","keywords":"fugit","pieces_left":"et","status":"sit"}'
+    -d '{"name":"quam","alias":"cupiditate","description":"quisquam","content":"voluptates","brand_id":"quasi","price":"ex","keywords":"officiis","pieces_left":"repudiandae","status":"sunt"}'
 
 ```
 
@@ -3839,15 +4928,15 @@ let headers = {
 };
 
 let body = {
-    "name": "odit",
-    "alias": "assumenda",
-    "description": "laboriosam",
-    "content": "eum",
-    "brand_id": "ducimus",
-    "price": "magnam",
-    "keywords": "fugit",
-    "pieces_left": "et",
-    "status": "sit"
+    "name": "quam",
+    "alias": "cupiditate",
+    "description": "quisquam",
+    "content": "voluptates",
+    "brand_id": "quasi",
+    "price": "ex",
+    "keywords": "officiis",
+    "pieces_left": "repudiandae",
+    "status": "sunt"
 }
 
 fetch(url, {
@@ -3866,16 +4955,16 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "status": "0",
+        "status": "1",
         "name": "Ноутбук HP 2RR85EA ProBook",
         "alias": "HP-2RR85EA",
         "description": null,
         "content": null,
-        "brand_id": 3,
+        "brand_id": 1,
         "price": 441590,
         "keywords": null,
         "is_hit": false,
-        "image": "http:\/\/localhost:8000\/storage\/images\/product\/no_image.jpg",
+        "image": "http:\/\/localhost:8000\/storage\/images\/product\/77286631_w200_h200_noutbuk-hp-probook.jpg",
         "pieces_left": 0,
         "created_at": null,
         "updated_at": null,
@@ -3966,7 +5055,7 @@ APIs for managing regions
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/regions?per_page=13&page=4" \
+    -G "http://localhost:8000/api/regions?per_page=20&page=20" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3977,8 +5066,8 @@ const url = new URL(
 );
 
 let params = {
-    "per_page": "13",
-    "page": "4",
+    "per_page": "20",
+    "page": "20",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4038,7 +5127,7 @@ curl -X POST \
     "http://localhost:8000/api/regions" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"non"}'
+    -d '{"name":"commodi"}'
 
 ```
 
@@ -4053,7 +5142,7 @@ let headers = {
 };
 
 let body = {
-    "name": "non"
+    "name": "commodi"
 }
 
 fetch(url, {
@@ -4154,7 +5243,7 @@ curl -X PUT \
     "http://localhost:8000/api/regions/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"asperiores"}'
+    -d '{"name":"ut"}'
 
 ```
 
@@ -4169,7 +5258,7 @@ let headers = {
 };
 
 let body = {
-    "name": "asperiores"
+    "name": "ut"
 }
 
 fetch(url, {
@@ -4329,7 +5418,7 @@ curl -X POST \
     "http://localhost:8000/api/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"hic"}'
+    -d '{"name":"sint"}'
 
 ```
 
@@ -4344,7 +5433,7 @@ let headers = {
 };
 
 let body = {
-    "name": "hic"
+    "name": "sint"
 }
 
 fetch(url, {
@@ -4441,7 +5530,7 @@ curl -X PUT \
     "http://localhost:8000/api/roles/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"nobis"}'
+    -d '{"name":"exercitationem"}'
 
 ```
 
@@ -4456,7 +5545,7 @@ let headers = {
 };
 
 let body = {
-    "name": "nobis"
+    "name": "exercitationem"
 }
 
 fetch(url, {
@@ -4561,7 +5650,7 @@ curl -X POST \
     "http://localhost:8000/api/users/resetPassword" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"voluptatem","password":"et"}'
+    -d '{"email":"ea","password":"qui"}'
 
 ```
 
@@ -4576,8 +5665,8 @@ let headers = {
 };
 
 let body = {
-    "email": "voluptatem",
-    "password": "et"
+    "email": "ea",
+    "password": "qui"
 }
 
 fetch(url, {
@@ -4595,9 +5684,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "Judd Schulist",
-        "email": "faltenwerth@example.com",
-        "email_verified_at": "2020-04-21T16:59:33.000000Z"
+        "name": "Name Rosenbaum",
+        "email": "lucie00@example.com",
+        "email_verified_at": "2020-05-13T05:19:13.000000Z"
     }
 }
 ```
@@ -4621,7 +5710,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/users?page=4&per_page=12" \
+    -G "http://localhost:8000/api/users?page=19&per_page=5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4632,8 +5721,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "4",
-    "per_page": "12",
+    "page": "19",
+    "per_page": "5",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4658,14 +5747,14 @@ fetch(url, {
 {
     "data": [
         {
-            "name": "Kaci Gottlieb",
-            "email": "aankunding@example.org",
-            "email_verified_at": "2020-04-21T16:59:33.000000Z"
+            "name": "Dr. Rebeka Bosco",
+            "email": "lvandervort@example.net",
+            "email_verified_at": "2020-05-13T05:19:13.000000Z"
         },
         {
-            "name": "Gustave Sauer",
-            "email": "fritsch.lydia@example.org",
-            "email_verified_at": "2020-04-21T16:59:33.000000Z"
+            "name": "Taya Eichmann",
+            "email": "blick.agustina@example.org",
+            "email_verified_at": "2020-05-13T05:19:13.000000Z"
         }
     ]
 }
@@ -4694,7 +5783,7 @@ curl -X POST \
     "http://localhost:8000/api/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"dolores","email":"excepturi","password":"ipsa","role_id":"cum"}'
+    -d '{"name":"sed","email":"quam","password":"dignissimos","role_id":"eum"}'
 
 ```
 
@@ -4709,10 +5798,10 @@ let headers = {
 };
 
 let body = {
-    "name": "dolores",
-    "email": "excepturi",
-    "password": "ipsa",
-    "role_id": "cum"
+    "name": "sed",
+    "email": "quam",
+    "password": "dignissimos",
+    "role_id": "eum"
 }
 
 fetch(url, {
@@ -4730,9 +5819,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "David McKenzie",
-        "email": "hudson12@example.com",
-        "email_verified_at": "2020-04-21T16:59:33.000000Z"
+        "name": "Demarcus Schmitt",
+        "email": "powlowski.lauryn@example.com",
+        "email_verified_at": "2020-05-13T05:19:13.000000Z"
     }
 }
 ```
@@ -4787,9 +5876,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "Camila Johns V",
-        "email": "bferry@example.net",
-        "email_verified_at": "2020-04-21T16:59:33.000000Z"
+        "name": "Mrs. Maegan Schumm Sr.",
+        "email": "gerlach.eileen@example.net",
+        "email_verified_at": "2020-05-13T05:19:13.000000Z"
     }
 }
 ```
@@ -4816,7 +5905,7 @@ curl -X PUT \
     "http://localhost:8000/api/users/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"beatae","password":"numquam"}'
+    -d '{"name":"culpa","password":"corrupti"}'
 
 ```
 
@@ -4831,8 +5920,8 @@ let headers = {
 };
 
 let body = {
-    "name": "beatae",
-    "password": "numquam"
+    "name": "culpa",
+    "password": "corrupti"
 }
 
 fetch(url, {
@@ -4850,9 +5939,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "Dr. Geoffrey Nolan PhD",
-        "email": "tjerde@example.org",
-        "email_verified_at": "2020-04-21T16:59:33.000000Z"
+        "name": "Amaya Wunsch",
+        "email": "nitzsche.greyson@example.net",
+        "email_verified_at": "2020-05-13T05:19:13.000000Z"
     }
 }
 ```
