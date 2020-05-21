@@ -136,6 +136,16 @@ class DatabaseSeeder extends Seeder
                 //'image'=>'',*/
 
             ],
+            [
+                'name'=>'Samsung',
+                'alias'=>'Samsung',
+
+            ],
+            [
+                'name'=>'Apple',
+                'alias'=>'Apple',
+
+            ],
 
         ]);
         DB::table('categories')->insert([
@@ -300,7 +310,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Ноутбук Lenovo ThinkPad X1 Carbon 14.0\'\' FHD(1920x1080)',
-                'alias'=>'q',
+                'alias'=>'Lenovo-ThinkPad',
                 'brand_id'=>2,
                 'price'=>160000,
                 'image'=>'117115501_w200_h200_noutbuk-lenovo-thinkpad.jpg'
@@ -308,7 +318,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Ноутбук Acer (NX.EFAER.122) EX2519/15.6\' HD/Celeron 3060 1.6Ghz/4GB/500GB/Intel HD/DVD-RW/Черный/ DOS',
-                'alias'=>'w',
+                'alias'=>'Acer-NX.EFAER.122',
                 'brand_id'=>3,
                 'price'=>110000,
                 'image'=>'115229591_w640_h640_noutbuk-acer-nxefaer122.jpg'
@@ -316,7 +326,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Ноутбук Acer EX2519 / 15.6" / NX.EFAER.025',
-                'alias'=>'e',
+                'alias'=>'Acer-NX.EFAER.025',
                 'brand_id'=>3,
                 'price'=>145000,
                 'image'=>'125363494_w640_h640_noutbuk-acer-ex2519.jpg'
@@ -324,7 +334,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Монитор Asus MX259H 90LM0190-B01670 (Art:904360528)',
-                'alias'=>'r',
+                'alias'=>'Asus-MX259H',
                 'brand_id'=>null,
                 'price'=>139000,
                 'image'=>'45894023_w640_h640_monitor-asus-mx259h.jpg'
@@ -332,7 +342,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Монитор Acer K202HQLAb UM.IX3EE.A01',
-                'alias'=>'t',
+                'alias'=>'Acer-K202HQLAb',
                 'brand_id'=>null,
                 'price'=>56000,
                 'image'=>'87002914_w640_h640_monitor-acer-k202hqlab.jpg'
@@ -340,7 +350,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Монитор Dell SE2416H 210-AFZC',
-                'alias'=>'y',
+                'alias'=>'Dell-SE2416H',
                 'brand_id'=>null,
                 'price'=>45134,
                 'image'=>'86584231_w640_h640_monitor-dell-se2416h.jpg'
@@ -348,7 +358,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Пиджак школьный "Колледж"',
-                'alias'=>'u',
+                'alias'=>'Пиджак',
                 'brand_id'=>null,
                 'price'=>4800,
                 'image'=>'101290132_w640_h640_pidzhak-shkolnyj-kolledzh.jpg'
@@ -356,7 +366,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Платье школьное со шлицей, воротник стойка, манжеты, р. 44, рост 170 см, цвет чёрный',
-                'alias'=>'i',
+                'alias'=>'Платье',
                 'brand_id'=>null,
                 'price'=>14567,
                 'image'=>'122552292_w640_h640_plate-shkolnoe-so.jpg'
@@ -364,7 +374,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'=>'Рубашка ONTHEGO GM',
-                'alias'=>'o',
+                'alias'=>'shirt-onthego',
                 //'alias'=>'ONTHEGO-GM',
                 'brand_id'=>4,
                 'price'=>800000,
@@ -408,6 +418,86 @@ class DatabaseSeeder extends Seeder
                 'brand_id'=>null,
                 'price'=>640000,
                 'image'=>'96054813_w640_h640_vitrina-v-stile.jpg'
+
+            ],
+            [
+                'name'=>'LED монитор Samsung LS22F350FHIXCI',
+                'alias'=>'Samsung-LS22F350FHIXCI',
+                'brand_id'=>6,
+                'price'=>64000,
+                'image'=>'106697615_w640_h640_led-monitor-samsung.jpg'
+
+            ],
+            [
+                'name'=>'Монитор Samsung LC34F791WQIXCI',
+                'alias'=>'Samsung LC34F791WQIXC',
+                'brand_id'=>6,
+                'price'=>388800,
+                'image'=>'75273701_w640_h640_monitor-samsung-lc34f791wqixci.jpg'
+
+            ],
+            [
+                'name'=>'Монитор 23" PHILIPS 234E5QHAW/00 Белый',
+                'alias'=>'PHILIPS-234E5QHAW',
+                'brand_id'=>null,
+                'price'=>102000,
+                'image'=>'63786298_w640_h640_monitor-23-philips.jpg'
+
+            ],
+            [
+                'name'=>'Монитор HP EliteDisplay E223 1FH45AA LCD 21.5\'\' [16:9] 1920х1080(FHD) IPS, nonGLARE, nonTOUCH, 250cd/m2, H178°',
+                'alias'=>'HP EliteDisplay E223',
+                'brand_id'=>1,
+                'price'=>93060,
+                'image'=>'113491986_w640_h640_monitor-hp-elitedisplay.jpg'
+
+            ],
+            [
+                'name'=>'Ноутбук Lenovo IP 110S 11,6\'HD/Celeron N3060/32Gb SSD/2Gb/Win10/Red',
+                'alias'=>'Lenovo IP 110S',
+                'brand_id'=>2,
+                'price'=>95000,
+                'image'=>'90070173_w640_h640_noutbuk-lenovo-ip.jpg'
+
+            ],
+            [
+                'name'=>'Ноутбук Asus Zenbook UX333FA-A4181T 13.3\'\' FHD(1920x1080) GLARE/Intel Core i5-8265U 1.60GHz Quad/8GB/256GB SSD',
+                'alias'=>'Asus Zenbook UX333FA-A4181T',
+                'brand_id'=>null,
+                'price'=>120000,
+                'image'=>'109147879_w640_h640_noutbuk-asus-zenbook.jpg'
+
+            ],
+            [
+                'name'=>'Ноутбук Acer Swift 3 SF314-54-876H NX.GZXER.004 14"FHD IPS Core i7-8550U 1.8GHz/max4GHz 8Gb SSD256Gb Linux',
+                'alias'=>'Acer Swift 3 SF314-54-876H',
+                'brand_id'=>3,
+                'price'=>119000,
+                'image'=>'126476838_w640_h640_noutbuk-acer-swift.jpg'
+
+            ],
+            [
+                'name'=>'Ноутбук Lenovo Yoga S940-14IIL 14.0FHD Intel® Core i5 1035/8Gb/SSD 512Gb/Win10(81Q8002QRK)',
+                'alias'=>'Lenovo Yoga S940-14IIL',
+                'brand_id'=>2,
+                'price'=>404000,
+                'image'=>'126568311_w640_h640_noutbuk-lenovo-yoga.jpg'
+
+            ],
+            [
+                'name'=>'HP 1EP73EA EliteBook 1040 G4 14" Core i5 8Gb SSD 360Gb Win10Pro',
+                'alias'=>'HP 1EP73EA EliteBook',
+                'brand_id'=>1,
+                'price'=>309000,
+                'image'=>'69643979_w640_h640_hp-1ep73ea-elitebook.jpg'
+
+            ],
+            [
+                'name'=>'Ноутбук Apple MacBook 12 дюймов (MLH72) Space Gray',
+                'alias'=>'Apple MacBook 12',
+                'brand_id'=>7,
+                'price'=>719000,
+                'image'=>'106723960_w640_h640_noutbuk-apple-macbook.jpg'
 
             ],
 
@@ -625,6 +715,153 @@ class DatabaseSeeder extends Seeder
             [
                 'product_id'=>15,
                 'filter_value_id'=>6,
+            ],
+            [
+                'product_id'=>16,
+                'filter_value_id'=>2,
+            ],
+            [
+                'product_id'=>17,
+                'filter_value_id'=>1,
+            ],
+            [
+                'product_id'=>18,
+                'filter_value_id'=>1,
+            ],
+            [
+                'product_id'=>19,
+                'filter_value_id'=>9,
+            ],
+            [
+                'product_id'=>20,
+                'filter_value_id'=>10,
+            ],
+            [
+                'product_id'=>20,
+                'filter_value_id'=>4,
+            ],
+            [
+                'product_id'=>20,
+                'filter_value_id'=>6,
+            ],
+            [
+                'product_id'=>21,
+                'filter_value_id'=>10,
+            ],
+            [
+                'product_id'=>21,
+                'filter_value_id'=>3,
+            ],
+            [
+                'product_id'=>22,
+                'filter_value_id'=>10,
+            ],
+            [
+                'product_id'=>22,
+                'filter_value_id'=>3,
+            ],
+            [
+                'product_id'=>22,
+                'filter_value_id'=>5,
+            ],
+            [
+                'product_id'=>23,
+                'filter_value_id'=>4,
+            ],
+            [
+                'product_id'=>23,
+                'filter_value_id'=>9,
+            ],
+            [
+                'product_id'=>24,
+                'filter_value_id'=>3,
+            ],
+            [
+                'product_id'=>24,
+                'filter_value_id'=>9,
+            ],
+            [
+                'product_id'=>25,
+                'filter_value_id'=>3,
+            ],
+            [
+                'product_id'=>25,
+                'filter_value_id'=>9,
+            ],
+            [
+                'product_id'=>25,
+                'filter_value_id'=>8,
+            ],
+
+        ]);
+        DB::table('product_images')->insert([
+            [
+                'product_id'=>16,
+                'image'=>'106697616_w640_h640_led-monitor-samsung.jpg'
+            ],
+            [
+                'product_id'=>16,
+                'image'=>'106697617_w640_h640_led-monitor-samsung.jpg'
+            ],
+            [
+                'product_id'=>16,
+                'image'=>'106697618_w640_h640_led-monitor-samsung.jpg'
+            ],
+            [
+                'product_id'=>17,
+                'image'=>'75273704_w640_h640_monitor-samsung-lc34f791wqixci.jpg'
+            ],
+            [
+                'product_id'=>19,
+                'image'=>'113491989_w640_h640_monitor-hp-elitedisplay.jpg'
+            ],
+            [
+                'product_id'=>19,
+                'image'=>'113492061_w640_h640_monitor-hp-elitedisplay.jpg'
+            ],
+            [
+                'product_id'=>19,
+                'image'=>'113492064_w640_h640_monitor-hp-elitedisplay.jpg'
+            ],
+            [
+                'product_id'=>20,
+                'image'=>'90070255_w640_h640_noutbuk-lenovo-ip.jpg'
+            ],
+            [
+                'product_id'=>20,
+                'image'=>'90070178_w640_h640_noutbuk-lenovo-ip.jpg'
+            ],
+            [
+                'product_id'=>22,
+                'image'=>'126476837_w640_h640_noutbuk-acer-swift.jpg'
+            ],
+            [
+                'product_id'=>23,
+                'image'=>'126568313_w640_h640_noutbuk-lenovo-yoga.jpg'
+            ],
+            [
+                'product_id'=>23,
+                'image'=>'126568314_w640_h640_noutbuk-lenovo-yoga.jpg'
+            ],
+            [
+                'product_id'=>24,
+                'image'=>'69643980_w640_h640_hp-1ep73ea-elitebook.jpg'
+            ],
+            [
+                'product_id'=>24,
+                'image'=>'69643982_w640_h640_hp-1ep73ea-elitebook.jpg'
+            ],
+            [
+                'product_id'=>25,
+                'image'=>'106723961_w640_h640_noutbuk-apple-macbook.jpg'
+            ],
+            [
+                'product_id'=>25,
+                'image'=>'106723962_w640_h640_noutbuk-apple-macbook.jpg'
+            ],
+            [
+                'product_id'=>25,
+                'image'=>'106723963_w640_h640_noutbuk-apple-macbook.jpg'
             ],
         ]);
         // $this->call(UserSeeder::class);

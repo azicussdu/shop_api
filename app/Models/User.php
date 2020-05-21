@@ -27,6 +27,7 @@ use Laravel\Passport\HasApiTokens;
  * @property Carbon $updated_at
  *
  * @property Collection|Order[] $orders
+ * @property Collection|Product[] $likes
  * @property Collection|Role[] $roles
  * @property Collection|Address[] $addresses
  *
@@ -64,15 +65,16 @@ class User extends Authenticatable implements MustVerifyEmail
         'role'
     ];
 
-    public function orders()
-    {
+    public function orders(){
         return $this->hasMany(Order::class)->with('products');
     }
     public function addresses(){
         return $this->belongsToMany(Address::class, 'orders');
     }
-	public function role()
-	{
+    public function likes(){
+        return $this->belongsToMany(Product::class, 'likes', 'user_id', 'product_id');
+    }
+	public function role(){
 		return $this->belongsTo(Role::class);
 	}
 

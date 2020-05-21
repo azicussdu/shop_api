@@ -7,11 +7,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class VerifyController extends Controller
 {
-    public function VerifyEmail($token = null)
+    public function verifyEmail($token = null)
     {
         if($token == null) {
 
@@ -21,7 +20,7 @@ class VerifyController extends Controller
             return response()->json('message', 'Invalid Login attempt');
         }
 
-        $user = User::where('email_verification_token',$token)->first();
+        $user = User::firstWhere('email_verification_token',$token);
 
         if($user == null ){
 
@@ -46,7 +45,7 @@ class VerifyController extends Controller
         return redirect()->away("http://localhost:8080");
 
     }
-    public function ResetPassword($token = null){
+    public function resetPassword($token = null){
         if($token == null) {
 
             session()->flash('message', 'Invalid Login attempt');
@@ -55,7 +54,7 @@ class VerifyController extends Controller
             return response()->json('message', 'Invalid Login attempt');
         }
 
-        $user = User::where('reset_password_token',$token)->first();
+        $user = User::firstWhere('reset_password_token',$token);
 
         if($user == null ){
 

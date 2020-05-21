@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
+use App\Models\Like;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Database\Eloquent\Builder;
@@ -53,7 +54,7 @@ class ProductController extends Controller
             $query->where('price', '>=', $request['price_from']);
         if($request->has('price_to'))
             $query->where('price', '<=', $request['price_to']);
-        return JsonResource::collection($query->paginate($request['per_page']));
+        return ProductResource::collection($query->paginate($request['per_page']));
     }
 
     /**
@@ -215,5 +216,52 @@ class ProductController extends Controller
         }
         $product->update(['image'=>$name]);
         return new JsonResource($product);
+    }
+
+    /**
+     * Likes the product for authenticated User
+     * @authenticated
+     * @bodyParam id numeric Product Id
+     * @apiResource Illuminate\Http\Resources\Json\JsonResource
+     * @apiResourceModel App\Models\User
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function like($id)
+    {
+        $user = auth()->user();
+        $user->likes()->attach($id);
+        return response()->json(["message"=>"Liked"]);
+    }
+
+    /**
+     * Unlikes the product for authenticated User
+     * @authenticated
+     * @bodyParam id numeric Product Id
+     * @apiResource Illuminate\Http\Resources\Json\JsonResource
+     * @apiResourceModel App\Models\User
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function unlike($id)
+    {
+        $user = auth()->user();
+        $user->likes()->detach($id);
+        return response()->json(["message"=>"Unliked"]);
+    }
+    /**
+     * Unlikes the product for authenticated User
+     * @authenticated
+     * @bodyParam id numeric Product Id
+     * @apiResource Illuminate\Http\Resources\Json\JsonResource
+     * @apiResourceModel App\Models\User
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function isLiked($id)
+    {
+        $user = auth()->user();
+        $exists = Like::where('user_id', $user['id'])->where('product_id', $id)->exists();
+        return response()->json(['isLiked'=>$exists]);
     }
 }

@@ -33,7 +33,7 @@ curl -X POST \
     "http://localhost:8000/api/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"password":"amet","email":"dolorem"}'
+    -d '{"password":"illo","email":"sunt"}'
 
 ```
 
@@ -48,8 +48,8 @@ let headers = {
 };
 
 let body = {
-    "password": "amet",
-    "email": "dolorem"
+    "password": "illo",
+    "email": "sunt"
 }
 
 fetch(url, {
@@ -145,7 +145,7 @@ curl -X POST \
     "http://localhost:8000/api/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"quam","email":"est","password":"corporis"}'
+    -d '{"name":"iure","email":"vel","password":"non"}'
 
 ```
 
@@ -160,9 +160,9 @@ let headers = {
 };
 
 let body = {
-    "name": "quam",
-    "email": "est",
-    "password": "corporis"
+    "name": "iure",
+    "email": "vel",
+    "password": "non"
 }
 
 fetch(url, {
@@ -205,7 +205,7 @@ curl -X POST \
     "http://localhost:8000/api/resetPassword" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"eius"}'
+    -d '{"email":"soluta"}'
 
 ```
 
@@ -220,7 +220,7 @@ let headers = {
 };
 
 let body = {
-    "email": "eius"
+    "email": "soluta"
 }
 
 fetch(url, {
@@ -306,7 +306,7 @@ APIs for managing addresses
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/addresses?page=17&per_page=9" \
+    -G "http://localhost:8000/api/addresses?page=4&per_page=12" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -317,8 +317,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "17",
-    "per_page": "9",
+    "page": "4",
+    "per_page": "12",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -409,7 +409,7 @@ curl -X POST \
     "http://localhost:8000/api/addresses" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"city_id":"et","zip_code":"quibusdam","address":"placeat","full_name":"cumque","telephone_number":"numquam","note":"nam"}'
+    -d '{"city_id":"magni","zip_code":"nisi","address":"ea","full_name":"tempore","telephone_number":"quia","note":"est"}'
 
 ```
 
@@ -424,12 +424,12 @@ let headers = {
 };
 
 let body = {
-    "city_id": "et",
-    "zip_code": "quibusdam",
-    "address": "placeat",
-    "full_name": "cumque",
-    "telephone_number": "numquam",
-    "note": "nam"
+    "city_id": "magni",
+    "zip_code": "nisi",
+    "address": "ea",
+    "full_name": "tempore",
+    "telephone_number": "quia",
+    "note": "est"
 }
 
 fetch(url, {
@@ -565,7 +565,7 @@ curl -X PUT \
     "http://localhost:8000/api/addresses/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"city_id":"quisquam","zip_code":"veniam","address":"expedita","full_name":"occaecati","telephone_number":"qui","note":"quaerat"}'
+    -d '{"city_id":"aut","zip_code":"repellendus","address":"sit","full_name":"quam","telephone_number":"quo","note":"cupiditate"}'
 
 ```
 
@@ -580,12 +580,12 @@ let headers = {
 };
 
 let body = {
-    "city_id": "quisquam",
-    "zip_code": "veniam",
-    "address": "expedita",
-    "full_name": "occaecati",
-    "telephone_number": "qui",
-    "note": "quaerat"
+    "city_id": "aut",
+    "zip_code": "repellendus",
+    "address": "sit",
+    "full_name": "quam",
+    "telephone_number": "quo",
+    "note": "cupiditate"
 }
 
 fetch(url, {
@@ -709,7 +709,7 @@ APIs for managing brands
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/brands?page=10&per_page=19" \
+    -G "http://localhost:8000/api/brands?page=2&per_page=8" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -720,8 +720,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "10",
-    "per_page": "19",
+    "page": "2",
+    "per_page": "8",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -792,7 +792,7 @@ curl -X POST \
     "http://localhost:8000/api/brands" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"doloribus","alias":"fuga","description":"sed","image":"asperiores"}'
+    -d '{"name":"aliquid","alias":"placeat","description":"unde","image":"blanditiis"}'
 
 ```
 
@@ -807,10 +807,10 @@ let headers = {
 };
 
 let body = {
-    "name": "doloribus",
-    "alias": "fuga",
-    "description": "sed",
-    "image": "asperiores"
+    "name": "aliquid",
+    "alias": "placeat",
+    "description": "unde",
+    "image": "blanditiis"
 }
 
 fetch(url, {
@@ -924,7 +924,7 @@ curl -X PUT \
     "http://localhost:8000/api/brands/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"ut","alias":"hic","description":"cupiditate"}'
+    -d '{"name":"dignissimos","alias":"molestiae","description":"enim"}'
 
 ```
 
@@ -939,9 +939,9 @@ let headers = {
 };
 
 let body = {
-    "name": "ut",
-    "alias": "hic",
-    "description": "cupiditate"
+    "name": "dignissimos",
+    "alias": "molestiae",
+    "description": "enim"
 }
 
 fetch(url, {
@@ -1469,7 +1469,7 @@ curl -X POST \
     "http://localhost:8000/api/categories" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"optio","alias":"aspernatur","parent_id":"vitae","keyword":"explicabo","description":"eligendi","image":"omnis"}'
+    -d '{"name":"repudiandae","alias":"enim","parent_id":"rem","keyword":"eveniet","description":"aspernatur","image":"quam"}'
 
 ```
 
@@ -1484,12 +1484,12 @@ let headers = {
 };
 
 let body = {
-    "name": "optio",
-    "alias": "aspernatur",
-    "parent_id": "vitae",
-    "keyword": "explicabo",
-    "description": "eligendi",
-    "image": "omnis"
+    "name": "repudiandae",
+    "alias": "enim",
+    "parent_id": "rem",
+    "keyword": "eveniet",
+    "description": "aspernatur",
+    "image": "quam"
 }
 
 fetch(url, {
@@ -1633,7 +1633,7 @@ curl -X PUT \
     "http://localhost:8000/api/categories/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"aut","alias":"voluptas","parent_id":"error","keyword":"voluptatem","description":"earum"}'
+    -d '{"name":"sed","alias":"quis","parent_id":"quia","keyword":"ab","description":"molestias"}'
 
 ```
 
@@ -1648,11 +1648,11 @@ let headers = {
 };
 
 let body = {
-    "name": "aut",
-    "alias": "voluptas",
-    "parent_id": "error",
-    "keyword": "voluptatem",
-    "description": "earum"
+    "name": "sed",
+    "alias": "quis",
+    "parent_id": "quia",
+    "keyword": "ab",
+    "description": "molestias"
 }
 
 fetch(url, {
@@ -1809,7 +1809,7 @@ APIs for managing cities
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/cities?page=11&per_page=12" \
+    -G "http://localhost:8000/api/cities?page=11&per_page=11" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1821,7 +1821,7 @@ const url = new URL(
 
 let params = {
     "page": "11",
-    "per_page": "12",
+    "per_page": "11",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1890,7 +1890,7 @@ curl -X POST \
     "http://localhost:8000/api/cities" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"ea","region_id":"totam","zip_code":"et"}'
+    -d '{"name":"pariatur","region_id":"asperiores","zip_code":"doloremque"}'
 
 ```
 
@@ -1905,9 +1905,9 @@ let headers = {
 };
 
 let body = {
-    "name": "ea",
-    "region_id": "totam",
-    "zip_code": "et"
+    "name": "pariatur",
+    "region_id": "asperiores",
+    "zip_code": "doloremque"
 }
 
 fetch(url, {
@@ -2017,7 +2017,7 @@ curl -X PUT \
     "http://localhost:8000/api/cities/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"similique","region_id":"facere","zip_code":"quia"}'
+    -d '{"name":"dolore","region_id":"tempore","zip_code":"corrupti"}'
 
 ```
 
@@ -2032,9 +2032,9 @@ let headers = {
 };
 
 let body = {
-    "name": "similique",
-    "region_id": "facere",
-    "zip_code": "quia"
+    "name": "dolore",
+    "region_id": "tempore",
+    "zip_code": "corrupti"
 }
 
 fetch(url, {
@@ -2144,7 +2144,7 @@ APIs for managing currency
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/currencies?page=15&per_page=3" \
+    -G "http://localhost:8000/api/currencies?page=3&per_page=5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -2155,8 +2155,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "15",
-    "per_page": "3",
+    "page": "3",
+    "per_page": "5",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -2231,7 +2231,7 @@ curl -X POST \
     "http://localhost:8000/api/currencies" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"sit","code":"possimus","symbol_left":"perspiciatis","symbol_right":"quia","value":"sed","base":"cumque"}'
+    -d '{"name":"repudiandae","code":"voluptas","symbol_left":"aperiam","symbol_right":"molestiae","value":"quaerat","base":"odit"}'
 
 ```
 
@@ -2246,12 +2246,12 @@ let headers = {
 };
 
 let body = {
-    "name": "sit",
-    "code": "possimus",
-    "symbol_left": "perspiciatis",
-    "symbol_right": "quia",
-    "value": "sed",
-    "base": "cumque"
+    "name": "repudiandae",
+    "code": "voluptas",
+    "symbol_left": "aperiam",
+    "symbol_right": "molestiae",
+    "value": "quaerat",
+    "base": "odit"
 }
 
 fetch(url, {
@@ -2370,7 +2370,7 @@ curl -X PUT \
     "http://localhost:8000/api/currencies/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"velit","code":"consequuntur","symbol_left":"voluptatum","symbol_right":"recusandae","value":"quisquam","base":"alias"}'
+    -d '{"name":"unde","code":"assumenda","symbol_left":"qui","symbol_right":"aut","value":"quam","base":"natus"}'
 
 ```
 
@@ -2385,12 +2385,12 @@ let headers = {
 };
 
 let body = {
-    "name": "velit",
-    "code": "consequuntur",
-    "symbol_left": "voluptatum",
-    "symbol_right": "recusandae",
-    "value": "quisquam",
-    "base": "alias"
+    "name": "unde",
+    "code": "assumenda",
+    "symbol_left": "qui",
+    "symbol_right": "aut",
+    "value": "quam",
+    "base": "natus"
 }
 
 fetch(url, {
@@ -2506,7 +2506,7 @@ APIs for managing filter groups
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/filterList?page=4&per_page=13" \
+    -G "http://localhost:8000/api/filterList?page=2&per_page=17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -2517,8 +2517,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "4",
-    "per_page": "13",
+    "page": "2",
+    "per_page": "17",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -2618,7 +2618,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/filterGroups?page=16&per_page=16" \
+    -G "http://localhost:8000/api/filterGroups?page=10&per_page=13" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -2629,8 +2629,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "16",
-    "per_page": "16",
+    "page": "10",
+    "per_page": "13",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -2733,7 +2733,7 @@ curl -X POST \
     "http://localhost:8000/api/filterGroups" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"rem"}'
+    -d '{"name":"et"}'
 
 ```
 
@@ -2748,7 +2748,7 @@ let headers = {
 };
 
 let body = {
-    "name": "rem"
+    "name": "et"
 }
 
 fetch(url, {
@@ -2891,7 +2891,7 @@ curl -X PUT \
     "http://localhost:8000/api/filterGroups/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"filter_group_id":"sed","value":"reprehenderit"}'
+    -d '{"filter_group_id":"ut","value":"ut"}'
 
 ```
 
@@ -2906,8 +2906,8 @@ let headers = {
 };
 
 let body = {
-    "filter_group_id": "sed",
-    "value": "reprehenderit"
+    "filter_group_id": "ut",
+    "value": "ut"
 }
 
 fetch(url, {
@@ -3033,7 +3033,7 @@ APIs for managing filer values
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/filterValues?page=16&per_page=9" \
+    -G "http://localhost:8000/api/filterValues?page=17&per_page=9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3044,7 +3044,7 @@ const url = new URL(
 );
 
 let params = {
-    "page": "16",
+    "page": "17",
     "per_page": "9",
 };
 Object.keys(params)
@@ -3106,7 +3106,7 @@ curl -X POST \
     "http://localhost:8000/api/filterValues" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"filter_group_id":"nisi","value":"aut"}'
+    -d '{"filter_group_id":"illum","value":"esse"}'
 
 ```
 
@@ -3121,8 +3121,8 @@ let headers = {
 };
 
 let body = {
-    "filter_group_id": "nisi",
-    "value": "aut"
+    "filter_group_id": "illum",
+    "value": "esse"
 }
 
 fetch(url, {
@@ -3224,7 +3224,7 @@ curl -X PUT \
     "http://localhost:8000/api/filterValues/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"filter_group_id":"perferendis","value":"ex"}'
+    -d '{"filter_group_id":"rerum","value":"possimus"}'
 
 ```
 
@@ -3239,8 +3239,8 @@ let headers = {
 };
 
 let body = {
-    "filter_group_id": "perferendis",
-    "value": "ex"
+    "filter_group_id": "rerum",
+    "value": "possimus"
 }
 
 fetch(url, {
@@ -3338,7 +3338,9 @@ Parameter | Status | Description
 
 APIs for managing addresses
 <!-- START_ccd5a3480be78f75d73b0ef8a486a00f -->
-## api/userAddresses
+## Show authorized User addresses
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
 > Example request:
 
 ```bash
@@ -3367,11 +3369,52 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (200):
 
 ```json
 {
-    "message": "Unauthenticated."
+    "data": [
+        {
+            "id": 1,
+            "zip_code": "6666",
+            "address": "Дом Ерсына",
+            "full_name": "Зачем нам это поле?",
+            "telephone_number": "87021234567",
+            "note": "ывфывфывфывфыввфыв ыфввфывф фывфы",
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null,
+            "city": {
+                "id": 1,
+                "region_id": 1,
+                "zip_code": "8359",
+                "name": "Нур-Султан",
+                "created_at": null,
+                "updated_at": null,
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 1,
+            "zip_code": "6666",
+            "address": "Дом Ерсына",
+            "full_name": "Зачем нам это поле?",
+            "telephone_number": "87021234567",
+            "note": "ывфывфывфывфыввфыв ыфввфывф фывфы",
+            "created_at": null,
+            "updated_at": null,
+            "deleted_at": null,
+            "city": {
+                "id": 1,
+                "region_id": 1,
+                "zip_code": "8359",
+                "name": "Нур-Султан",
+                "created_at": null,
+                "updated_at": null,
+                "deleted_at": null
+            }
+        }
+    ]
 }
 ```
 
@@ -3389,7 +3432,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/orders?page=7&per_page=9" \
+    -G "http://localhost:8000/api/orders?page=11&per_page=2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3400,8 +3443,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "7",
-    "per_page": "9",
+    "page": "11",
+    "per_page": "2",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3472,7 +3515,7 @@ curl -X POST \
     "http://localhost:8000/api/orders" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":"ut","status":"est","currency_id":"est","address_id":"possimus","products":[]}'
+    -d '{"user_id":"nemo","status":"corrupti","currency_id":"eum","address_id":"ex","products":[]}'
 
 ```
 
@@ -3487,10 +3530,10 @@ let headers = {
 };
 
 let body = {
-    "user_id": "ut",
-    "status": "est",
-    "currency_id": "est",
-    "address_id": "possimus",
+    "user_id": "nemo",
+    "status": "corrupti",
+    "currency_id": "eum",
+    "address_id": "ex",
     "products": []
 }
 
@@ -3606,7 +3649,7 @@ curl -X PUT \
     "http://localhost:8000/api/orders/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":"reprehenderit","status":"corporis","currency_id":"at","address_id":"ex"}'
+    -d '{"user_id":"accusantium","status":"ab","currency_id":"maxime","address_id":"saepe"}'
 
 ```
 
@@ -3621,10 +3664,10 @@ let headers = {
 };
 
 let body = {
-    "user_id": "reprehenderit",
-    "status": "corporis",
-    "currency_id": "at",
-    "address_id": "ex"
+    "user_id": "accusantium",
+    "status": "ab",
+    "currency_id": "maxime",
+    "address_id": "saepe"
 }
 
 fetch(url, {
@@ -3733,7 +3776,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/userOrders?page=17&per_page=8" \
+    -G "http://localhost:8000/api/userOrders?page=20&per_page=7" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3744,8 +3787,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "17",
-    "per_page": "8",
+    "page": "20",
+    "per_page": "7",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3816,7 +3859,7 @@ curl -X POST \
     "http://localhost:8000/api/userOrders" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"address_id":"natus","products":[]}'
+    -d '{"address_id":"exercitationem","city_id":"similique","zip_code":"maiores","address":"sunt","full_name":"totam","telephone_number":"consequatur","products":[]}'
 
 ```
 
@@ -3831,7 +3874,12 @@ let headers = {
 };
 
 let body = {
-    "address_id": "natus",
+    "address_id": "exercitationem",
+    "city_id": "similique",
+    "zip_code": "maiores",
+    "address": "sunt",
+    "full_name": "totam",
+    "telephone_number": "consequatur",
     "products": []
 }
 
@@ -3868,8 +3916,13 @@ fetch(url, {
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `address_id` | numeric |  required  | Address Id
-        `products` | array |  required  | Array of Products json objects with id,prices,pieces parameters
+    `address_id` | numeric |  optional  | Address Id if this specified then other will not
+        `city_id` | numeric |  optional  | City Id
+        `zip_code` | text |  optional  | Zip Code
+        `address` | text |  optional  | Address
+        `full_name` | text |  optional  | FullName
+        `telephone_number` | text |  optional  | Number
+        `products` | array |  required  | Array of Products json objects with id ,pieces parameters
     
 <!-- END_212f593cde90f8df1a197d6b1a3005ce -->
 
@@ -3944,7 +3997,7 @@ curl -X PUT \
     "http://localhost:8000/api/userOrders/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":"minima","status":"ratione","currency_id":"iure","address_id":"sit"}'
+    -d '{"user_id":"vero","status":"in","currency_id":"vero","address_id":"deleniti"}'
 
 ```
 
@@ -3959,10 +4012,10 @@ let headers = {
 };
 
 let body = {
-    "user_id": "minima",
-    "status": "ratione",
-    "currency_id": "iure",
-    "address_id": "sit"
+    "user_id": "vero",
+    "status": "in",
+    "currency_id": "vero",
+    "address_id": "deleniti"
 }
 
 fetch(url, {
@@ -4074,7 +4127,7 @@ APIs for managing product images
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/productImages?page=7&per_page=3" \
+    -G "http://localhost:8000/api/productImages?page=12&per_page=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4085,8 +4138,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "7",
-    "per_page": "3",
+    "page": "12",
+    "per_page": "1",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4139,7 +4192,7 @@ curl -X POST \
     "http://localhost:8000/api/productImages" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"product_id":"voluptas","image":"temporibus"}'
+    -d '{"product_id":"voluptatem","image":"inventore"}'
 
 ```
 
@@ -4154,8 +4207,8 @@ let headers = {
 };
 
 let body = {
-    "product_id": "voluptas",
-    "image": "temporibus"
+    "product_id": "voluptatem",
+    "image": "inventore"
 }
 
 fetch(url, {
@@ -4268,7 +4321,7 @@ curl -X PUT \
     "http://localhost:8000/api/productImages/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"product_id":"ab"}'
+    -d '{"product_id":"excepturi"}'
 
 ```
 
@@ -4283,7 +4336,7 @@ let headers = {
 };
 
 let body = {
-    "product_id": "ab"
+    "product_id": "excepturi"
 }
 
 fetch(url, {
@@ -4405,7 +4458,7 @@ curl -X POST \
     "http://localhost:8000/api/products/setImage/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"image":"voluptatem"}'
+    -d '{"image":"ad"}'
 
 ```
 
@@ -4420,7 +4473,7 @@ let headers = {
 };
 
 let body = {
-    "image": "voluptatem"
+    "image": "ad"
 }
 
 fetch(url, {
@@ -4475,7 +4528,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/productList?page=8&per_page=18&categories=molestiae&filter_values=amet&brand=velit&price_from=laborum&price_to=natus" \
+    -G "http://localhost:8000/api/productList?page=20&per_page=12&categories=culpa&filter_values=vel&brand=ut&price_from=adipisci&price_to=ipsam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4486,13 +4539,13 @@ const url = new URL(
 );
 
 let params = {
-    "page": "8",
-    "per_page": "18",
-    "categories": "molestiae",
-    "filter_values": "amet",
-    "brand": "velit",
-    "price_from": "laborum",
-    "price_to": "natus",
+    "page": "20",
+    "per_page": "12",
+    "categories": "culpa",
+    "filter_values": "vel",
+    "brand": "ut",
+    "price_from": "adipisci",
+    "price_to": "ipsam",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4646,7 +4699,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/products?page=13&per_page=2&categories=in&filter_values=laborum&brand=consequuntur&price_from=harum&price_to=sunt" \
+    -G "http://localhost:8000/api/products?page=10&per_page=5&categories=est&filter_values=dolor&brand=ut&price_from=itaque&price_to=assumenda" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4657,13 +4710,13 @@ const url = new URL(
 );
 
 let params = {
-    "page": "13",
-    "per_page": "2",
-    "categories": "in",
-    "filter_values": "laborum",
-    "brand": "consequuntur",
-    "price_from": "harum",
-    "price_to": "sunt",
+    "page": "10",
+    "per_page": "5",
+    "categories": "est",
+    "filter_values": "dolor",
+    "brand": "ut",
+    "price_from": "itaque",
+    "price_to": "assumenda",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4753,7 +4806,7 @@ curl -X POST \
     "http://localhost:8000/api/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"impedit","alias":"dicta","description":"natus","content":"rerum","brand_id":"tenetur","price":"amet","keywords":"est","image":"repellat","product_images":"omnis","pieces_left":"tempora","status":"dolore"}'
+    -d '{"name":"consequatur","alias":"nam","description":"velit","content":"provident","brand_id":"laboriosam","price":"excepturi","keywords":"ut","image":"doloribus","product_images":"consectetur","pieces_left":"excepturi","status":"dolores"}'
 
 ```
 
@@ -4768,17 +4821,17 @@ let headers = {
 };
 
 let body = {
-    "name": "impedit",
-    "alias": "dicta",
-    "description": "natus",
-    "content": "rerum",
-    "brand_id": "tenetur",
-    "price": "amet",
-    "keywords": "est",
-    "image": "repellat",
-    "product_images": "omnis",
-    "pieces_left": "tempora",
-    "status": "dolore"
+    "name": "consequatur",
+    "alias": "nam",
+    "description": "velit",
+    "content": "provident",
+    "brand_id": "laboriosam",
+    "price": "excepturi",
+    "keywords": "ut",
+    "image": "doloribus",
+    "product_images": "consectetur",
+    "pieces_left": "excepturi",
+    "status": "dolores"
 }
 
 fetch(url, {
@@ -4913,7 +4966,7 @@ curl -X PUT \
     "http://localhost:8000/api/products/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"quam","alias":"cupiditate","description":"quisquam","content":"voluptates","brand_id":"quasi","price":"ex","keywords":"officiis","pieces_left":"repudiandae","status":"sunt"}'
+    -d '{"name":"fugiat","alias":"qui","description":"omnis","content":"exercitationem","brand_id":"commodi","price":"facilis","keywords":"consequatur","pieces_left":"consequuntur","status":"corrupti"}'
 
 ```
 
@@ -4928,15 +4981,15 @@ let headers = {
 };
 
 let body = {
-    "name": "quam",
-    "alias": "cupiditate",
-    "description": "quisquam",
-    "content": "voluptates",
-    "brand_id": "quasi",
-    "price": "ex",
-    "keywords": "officiis",
-    "pieces_left": "repudiandae",
-    "status": "sunt"
+    "name": "fugiat",
+    "alias": "qui",
+    "description": "omnis",
+    "content": "exercitationem",
+    "brand_id": "commodi",
+    "price": "facilis",
+    "keywords": "consequatur",
+    "pieces_left": "consequuntur",
+    "status": "corrupti"
 }
 
 fetch(url, {
@@ -5055,7 +5108,7 @@ APIs for managing regions
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/regions?per_page=20&page=20" \
+    -G "http://localhost:8000/api/regions?per_page=6&page=5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5066,8 +5119,8 @@ const url = new URL(
 );
 
 let params = {
-    "per_page": "20",
-    "page": "20",
+    "per_page": "6",
+    "page": "5",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5127,7 +5180,7 @@ curl -X POST \
     "http://localhost:8000/api/regions" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"commodi"}'
+    -d '{"name":"aut"}'
 
 ```
 
@@ -5142,7 +5195,7 @@ let headers = {
 };
 
 let body = {
-    "name": "commodi"
+    "name": "aut"
 }
 
 fetch(url, {
@@ -5243,7 +5296,7 @@ curl -X PUT \
     "http://localhost:8000/api/regions/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"ut"}'
+    -d '{"name":"modi"}'
 
 ```
 
@@ -5258,7 +5311,7 @@ let headers = {
 };
 
 let body = {
-    "name": "ut"
+    "name": "modi"
 }
 
 fetch(url, {
@@ -5418,7 +5471,7 @@ curl -X POST \
     "http://localhost:8000/api/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"sint"}'
+    -d '{"name":"aliquam"}'
 
 ```
 
@@ -5433,7 +5486,7 @@ let headers = {
 };
 
 let body = {
-    "name": "sint"
+    "name": "aliquam"
 }
 
 fetch(url, {
@@ -5530,7 +5583,7 @@ curl -X PUT \
     "http://localhost:8000/api/roles/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"exercitationem"}'
+    -d '{"name":"qui"}'
 
 ```
 
@@ -5545,7 +5598,7 @@ let headers = {
 };
 
 let body = {
-    "name": "exercitationem"
+    "name": "qui"
 }
 
 fetch(url, {
@@ -5650,7 +5703,7 @@ curl -X POST \
     "http://localhost:8000/api/users/resetPassword" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"ea","password":"qui"}'
+    -d '{"email":"non","password":"consequatur"}'
 
 ```
 
@@ -5665,8 +5718,8 @@ let headers = {
 };
 
 let body = {
-    "email": "ea",
-    "password": "qui"
+    "email": "non",
+    "password": "consequatur"
 }
 
 fetch(url, {
@@ -5684,9 +5737,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "Name Rosenbaum",
-        "email": "lucie00@example.com",
-        "email_verified_at": "2020-05-13T05:19:13.000000Z"
+        "name": "Mrs. Lillie Russel",
+        "email": "dwest@example.com",
+        "email_verified_at": "2020-05-13T05:57:57.000000Z"
     }
 }
 ```
@@ -5710,7 +5763,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/users?page=19&per_page=5" \
+    -G "http://localhost:8000/api/users?page=6&per_page=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5721,8 +5774,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "19",
-    "per_page": "5",
+    "page": "6",
+    "per_page": "1",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5747,14 +5800,14 @@ fetch(url, {
 {
     "data": [
         {
-            "name": "Dr. Rebeka Bosco",
-            "email": "lvandervort@example.net",
-            "email_verified_at": "2020-05-13T05:19:13.000000Z"
+            "name": "Dr. Makenzie Blanda Sr.",
+            "email": "leopold87@example.com",
+            "email_verified_at": "2020-05-13T05:57:57.000000Z"
         },
         {
-            "name": "Taya Eichmann",
-            "email": "blick.agustina@example.org",
-            "email_verified_at": "2020-05-13T05:19:13.000000Z"
+            "name": "Ross Gorczany",
+            "email": "kylee.dubuque@example.com",
+            "email_verified_at": "2020-05-13T05:57:57.000000Z"
         }
     ]
 }
@@ -5783,7 +5836,7 @@ curl -X POST \
     "http://localhost:8000/api/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"sed","email":"quam","password":"dignissimos","role_id":"eum"}'
+    -d '{"name":"tempora","email":"porro","password":"voluptas","role_id":"nam"}'
 
 ```
 
@@ -5798,10 +5851,10 @@ let headers = {
 };
 
 let body = {
-    "name": "sed",
-    "email": "quam",
-    "password": "dignissimos",
-    "role_id": "eum"
+    "name": "tempora",
+    "email": "porro",
+    "password": "voluptas",
+    "role_id": "nam"
 }
 
 fetch(url, {
@@ -5819,9 +5872,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "Demarcus Schmitt",
-        "email": "powlowski.lauryn@example.com",
-        "email_verified_at": "2020-05-13T05:19:13.000000Z"
+        "name": "Odessa Ortiz",
+        "email": "pearl79@example.org",
+        "email_verified_at": "2020-05-13T05:57:57.000000Z"
     }
 }
 ```
@@ -5876,9 +5929,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "Mrs. Maegan Schumm Sr.",
-        "email": "gerlach.eileen@example.net",
-        "email_verified_at": "2020-05-13T05:19:13.000000Z"
+        "name": "Hazle Pfannerstill",
+        "email": "addison.adams@example.net",
+        "email_verified_at": "2020-05-13T05:57:57.000000Z"
     }
 }
 ```
@@ -5905,7 +5958,7 @@ curl -X PUT \
     "http://localhost:8000/api/users/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"culpa","password":"corrupti"}'
+    -d '{"name":"consequuntur","password":"animi"}'
 
 ```
 
@@ -5920,8 +5973,8 @@ let headers = {
 };
 
 let body = {
-    "name": "culpa",
-    "password": "corrupti"
+    "name": "consequuntur",
+    "password": "animi"
 }
 
 fetch(url, {
@@ -5939,9 +5992,9 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "Amaya Wunsch",
-        "email": "nitzsche.greyson@example.net",
-        "email_verified_at": "2020-05-13T05:19:13.000000Z"
+        "name": "Ayana Crooks",
+        "email": "aschumm@example.net",
+        "email_verified_at": "2020-05-13T05:57:57.000000Z"
     }
 }
 ```

@@ -105,7 +105,7 @@ class PassportController extends Controller
 
         if (auth()->attempt($credentials)) {
 
-                $user = auth()->user();
+            $user = auth()->user();
             if($user->email_verified == 1) {
                 $token = $user->createToken('shop_api')->accessToken;
                 return response()->json([
