@@ -29,7 +29,7 @@ class RegionController extends Controller
      */
     public function index(Request $request)
     {
-        return JsonResource::collection(Region::all()->paginate($request['per_page']));
+        return JsonResource::collection(Region::paginate($request['per_page']));
     }
 
     /**

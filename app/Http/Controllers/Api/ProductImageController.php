@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Validation\ValidationException;
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 /**
  * @group ProductImage management
@@ -49,12 +51,18 @@ class ProductImageController extends Controller
             'product_id'=>'required|numeric|max:20',
             'image'=>'required|image',
         ]);
-        $name = $request->file('image')->hashName();
-        $request->file('image')->storeAs('images/category', $name);
+//        $name = $request->file('image')->hashName();
+//        $request->file('image')->storeAs('images/category', $name);
+
+        $filename = $request->file('image')->getClientOriginalName();
+
+        $image_resize = Image::make($request->file('image')->getRealPath());
+        $image_resize->resize(300, 600);
+        $image_resize->save(public_path('images/category/' .$filename));
 
         $pImage=ProductImage::create([
             'product_id'=>$request['product_id'],
-            'image'=>$name,
+            'image'=>$filename,
         ]);
         return new JsonResource($pImage);
     }

@@ -31,7 +31,7 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        return JsonResource::collection(Order::with('user')->latest()->paginate($request['per_page']));
+        return JsonResource::collection(Order::with(['user', 'address'])->latest()->paginate($request['per_page']));
     }
 
     /**

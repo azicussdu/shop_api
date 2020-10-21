@@ -52,6 +52,8 @@ class Product extends Model
 	];
 
 	protected $fillable = [
+		'weight',
+		'volume',
 		'status',
 		'name',
 		'alias',

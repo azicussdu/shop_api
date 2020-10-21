@@ -29,7 +29,7 @@ class CityController extends Controller
      */
     public function index(Request $request)
     {
-        return JsonResource::collection(City::latest()->paginate($request['per_page']));
+        return JsonResource::collection(City::with('region')->latest()->paginate($request['per_page']));
     }
 
     /**
@@ -69,7 +69,7 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        return new JsonResource(City::findOrFail($id));
+        return new JsonResource(City::with('region')->findOrFail($id));
     }
 
     /**

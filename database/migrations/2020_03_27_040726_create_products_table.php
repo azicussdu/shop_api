@@ -15,6 +15,8 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->double('volume', 10, 3);
+            $table->double('weight', 10, 3);
             $table->enum('status',['0','1'])->default(1);
             $table->string('name');
             $table->string('alias')->unique();
