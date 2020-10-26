@@ -79,24 +79,18 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('addresses')->insert([
             [
-                'city_id'=>1,
-                'zip_code'=>'6666',
                 'address'=>'Дом Ерсына',
                 'full_name'=>'Зачем нам это поле?',
                 'telephone_number'=>'87021234567',
                 'note'=>'ывфывфывфывфыввфыв ыфввфывф фывфы'
             ] ,
             [
-                'city_id'=>2,
-                'zip_code'=>'6666',
                 'address'=>'Дом Азамата',
                 'full_name'=>'Зачем нам это поле?',
                 'telephone_number'=>'87021234567',
                 'note'=>'ывфывфывфывфыввфыв ыфввфывф фывфы'
             ] ,
             [
-                'city_id'=>3,
-                'zip_code'=>'6666',
                 'address'=>'Дом Галымжана',
                 'full_name'=>'Зачем нам это поле?',
                 'telephone_number'=>'87021234567',
@@ -153,7 +147,7 @@ class DatabaseSeeder extends Seeder
                 'name'=>'Техника и электроника',
                 'alias'=>'электротехника',
                 'parent_id'=>null,
-               // 'keyword'=>'электротехника',
+                // 'keyword'=>'электротехника',
                 //'description'=>'',
                 'image'=>'no_image.jpg',
             ],
@@ -301,6 +295,8 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('products')->insert([
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук HP 2RR85EA ProBook',
                 'alias'=>'HP-2RR85EA',
                 'brand_id'=>1,
@@ -309,6 +305,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Lenovo ThinkPad X1 Carbon 14.0\'\' FHD(1920x1080)',
                 'alias'=>'Lenovo-ThinkPad',
                 'brand_id'=>2,
@@ -317,6 +315,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Acer (NX.EFAER.122) EX2519/15.6\' HD/Celeron 3060 1.6Ghz/4GB/500GB/Intel HD/DVD-RW/Черный/ DOS',
                 'alias'=>'Acer-NX.EFAER.122',
                 'brand_id'=>3,
@@ -325,6 +325,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Acer EX2519 / 15.6" / NX.EFAER.025',
                 'alias'=>'Acer-NX.EFAER.025',
                 'brand_id'=>3,
@@ -333,6 +335,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Монитор Asus MX259H 90LM0190-B01670 (Art:904360528)',
                 'alias'=>'Asus-MX259H',
                 'brand_id'=>null,
@@ -341,6 +345,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Монитор Acer K202HQLAb UM.IX3EE.A01',
                 'alias'=>'Acer-K202HQLAb',
                 'brand_id'=>null,
@@ -349,6 +355,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Монитор Dell SE2416H 210-AFZC',
                 'alias'=>'Dell-SE2416H',
                 'brand_id'=>null,
@@ -357,6 +365,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Пиджак школьный "Колледж"',
                 'alias'=>'Пиджак',
                 'brand_id'=>null,
@@ -365,6 +375,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Платье школьное со шлицей, воротник стойка, манжеты, р. 44, рост 170 см, цвет чёрный',
                 'alias'=>'Платье',
                 'brand_id'=>null,
@@ -373,6 +385,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Рубашка ONTHEGO GM',
                 'alias'=>'shirt-onthego',
                 //'alias'=>'ONTHEGO-GM',
@@ -381,6 +395,8 @@ class DatabaseSeeder extends Seeder
                 'image'=>'117961268_w640_h640_rubashka-muzhskaya-gongl.jpg'
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Рубашка Supreme',
                 'alias'=>'shirt-supreme',
                 'brand_id'=>5,
@@ -389,6 +405,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Матрас надувной Intex DELUX SINGLE-HIGH 64708/64709 [полуторный | двухспальный] (Двуспальный)',
                 'alias'=>'p',
                 'brand_id'=>null,
@@ -397,6 +415,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Кровать надувная Intex 66768 Pillow Rest Classic',
                 'alias'=>'a',
                 'brand_id'=>null,
@@ -405,6 +425,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Стол в классическом китайском стиле',
                 'alias'=>'s',
                 'brand_id'=>null,
@@ -413,6 +435,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Витрина в стиле Рококо',
                 'alias'=>'f',
                 'brand_id'=>null,
@@ -421,6 +445,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'LED монитор Samsung LS22F350FHIXCI',
                 'alias'=>'Samsung-LS22F350FHIXCI',
                 'brand_id'=>6,
@@ -429,6 +455,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Монитор Samsung LC34F791WQIXCI',
                 'alias'=>'Samsung LC34F791WQIXC',
                 'brand_id'=>6,
@@ -437,6 +465,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Монитор 23" PHILIPS 234E5QHAW/00 Белый',
                 'alias'=>'PHILIPS-234E5QHAW',
                 'brand_id'=>null,
@@ -445,6 +475,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Монитор HP EliteDisplay E223 1FH45AA LCD 21.5\'\' [16:9] 1920х1080(FHD) IPS, nonGLARE, nonTOUCH, 250cd/m2, H178°',
                 'alias'=>'HP EliteDisplay E223',
                 'brand_id'=>1,
@@ -453,6 +485,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Lenovo IP 110S 11,6\'HD/Celeron N3060/32Gb SSD/2Gb/Win10/Red',
                 'alias'=>'Lenovo IP 110S',
                 'brand_id'=>2,
@@ -461,6 +495,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Asus Zenbook UX333FA-A4181T 13.3\'\' FHD(1920x1080) GLARE/Intel Core i5-8265U 1.60GHz Quad/8GB/256GB SSD',
                 'alias'=>'Asus Zenbook UX333FA-A4181T',
                 'brand_id'=>null,
@@ -469,6 +505,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Acer Swift 3 SF314-54-876H NX.GZXER.004 14"FHD IPS Core i7-8550U 1.8GHz/max4GHz 8Gb SSD256Gb Linux',
                 'alias'=>'Acer Swift 3 SF314-54-876H',
                 'brand_id'=>3,
@@ -477,6 +515,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Lenovo Yoga S940-14IIL 14.0FHD Intel® Core i5 1035/8Gb/SSD 512Gb/Win10(81Q8002QRK)',
                 'alias'=>'Lenovo Yoga S940-14IIL',
                 'brand_id'=>2,
@@ -485,6 +525,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'HP 1EP73EA EliteBook 1040 G4 14" Core i5 8Gb SSD 360Gb Win10Pro',
                 'alias'=>'HP 1EP73EA EliteBook',
                 'brand_id'=>1,
@@ -493,6 +535,8 @@ class DatabaseSeeder extends Seeder
 
             ],
             [
+                'volume' => 1,
+                'weight' => 1,
                 'name'=>'Ноутбук Apple MacBook 12 дюймов (MLH72) Space Gray',
                 'alias'=>'Apple MacBook 12',
                 'brand_id'=>7,

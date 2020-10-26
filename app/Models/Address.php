@@ -40,8 +40,6 @@ class Address extends Model
 	];
 
 	protected $fillable = [
-		'city_id',
-		'zip_code',
 		'address',
 		'full_name',
 		'telephone_number',
