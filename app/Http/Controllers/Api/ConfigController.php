@@ -17,4 +17,7 @@ class ConfigController
         }
     }
 
+    public function passport(){
+        Artisan::call('passport:install');
+    }
 }
