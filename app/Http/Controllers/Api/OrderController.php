@@ -52,14 +52,12 @@ class OrderController extends Controller
     {
         $this->validate($request,[
             'user_id'=>'required|numeric|digits_between:1,20',
-            'status'=>'required|in:0,1,2',
-            'currency_id'=>'required|numeric|digits_between:1,10',
             'address_id'=>'required|numeric|digits_between:1,20'
         ]);
         $order = Order::create([
             'user_id'=>$request['user_id'],
-            'status'=>$request['status'],
-            'currency_id'=>$request['currency_id'],
+            'status'=>1,
+            'currency_id'=>1,
             'sum'=>$request['sum'],
             'address_id'=>$request['address_id'],
         ]);
