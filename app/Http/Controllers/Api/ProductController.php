@@ -44,10 +44,12 @@ class ProductController extends Controller
             $query->whereHas('categories',  function (Builder $query) use ($request) {
                 $query->whereIn('categories.id', $request['categories']);
             });
-        if($request->has('filter_values'))
-            $query->whereHas('filter_values',  function (Builder $query) use ($request) {
-                $query->whereIn('filter_values.id', $request['filter_values']);
+        if($request->has('filter_values') && $request['filter_values'] != "") {
+            $filterValues = explode(',', $request['filter_values']);
+            $query->whereHas('filter_values', function (Builder $query) use ($request, $filterValues) {
+                $query->whereIn('filter_values.id', $filterValues);
             });
+        }
         if($request->has('brand'))
             $query->where('brand_id', $request['brand']);
         if($request->has('price_from'))
