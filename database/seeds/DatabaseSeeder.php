@@ -101,9 +101,6 @@ class DatabaseSeeder extends Seeder
             [
                 'name'=>'hewlett packard',
                 'alias'=>'hewlett packard',
-                /*'description'=>'Hewlett-Packard — одна из крупнейших американских компаний в сфере информационных
-                технологий, существовавшая в период 1939—2015 годов',
-                //'image'=>'',*/
 
             ],
             [
@@ -117,28 +114,19 @@ class DatabaseSeeder extends Seeder
             [
                 'name'=>'louis vuitton',
                 'alias'=>'LV',
-                /*'description'=>'ОписаниеLouis Vuitton — французский дом моды,
-                специализирующийся на производстве чемоданов и сумок, модной одежды,
-                парфюмерии и аксессуаров класса «люкс» под одноимённой торговой маркой.',
-                //'image'=>'',*/
 
             ],
             [
                 'name'=>'Supreme',
                 'alias'=>'Supreme',
-                /*'description'=>'Supreme — американский стритвер-бренд одежды, основанный в Нью-Йорке в апреле 1994 года',
-                //'image'=>'',*/
-
             ],
             [
                 'name'=>'Samsung',
                 'alias'=>'Samsung',
-
             ],
             [
                 'name'=>'Apple',
                 'alias'=>'Apple',
-
             ],
 
         ]);
@@ -147,63 +135,57 @@ class DatabaseSeeder extends Seeder
                 'name'=>'Техника и электроника',
                 'alias'=>'электротехника',
                 'parent_id'=>null,
-                // 'keyword'=>'электротехника',
-                //'description'=>'',
                 'image'=>'no_image.jpg',
             ],
             [
                 'name'=>'Компьютерная техника и ПО',
                 'alias'=>'комп',
                 'parent_id'=>1,
-                'image'=>'12746992_w230_h230_kompyuternaya-tehnika-i.jpg'
+                'image'=>'no_image.jpg'
             ],
             [
                 'name'=>'Ноутбуки и нетбуки',
                 'alias'=>'ноуты',
                 'parent_id'=>2,
-                //'keyword'=>'ноуты',
-                //'description'=>'',
-                'image'=>'72624213_w230_h230_noutbuki-i-netbuki.jpg',
+                'image'=>'no_image.jpg',
             ],
             [
                 'name'=>'Мониторы',
                 'alias'=>'моник',
                 'parent_id'=>2,
-                'image'=>'11632477_w230_h230_monitory.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
                 'name'=>'Одежда и обувь',
                 'alias'=>'одежда',
                 'parent_id'=>null,
-                //'keyword'=>'шмот',
-                //'description'=>'',
                 'image'=>'no_image.jpg',
             ],
             [
                 'name'=>'Одежда и обувь детские',
                 'alias'=>'детское',
                 'parent_id'=>5,
-                'image'=>'82119649_w230_h230_odezhda-i-obuv.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
                 'name'=>'Школьная форма',
                 'alias'=>'форма',
                 'parent_id'=>6,
-                'image'=>'11780224_w230_h230_shkolnaya-forma.jpg'
+                'image'=>'no_image.jpg'
             ],
             [
                 'name'=>'Одежда и обувь мужское',
                 'alias'=>'мужское',
                 'parent_id'=>5,
-                'image'=>'82119662_w230_h230_odezhda-muzhskaya.jpg'
+                'image'=>'no_image.jpg'
             ],
             [
                 'name'=>'Рубашки мужские',
                 'alias'=>'рубкашка',
                 'parent_id'=>8,
-                'image'=>'82130822_w230_h230_rubashki-muzhskie.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -217,19 +199,19 @@ class DatabaseSeeder extends Seeder
                 'name'=>'Мебель',
                 'alias'=>'мебель',
                 'parent_id'=>10,
-                'image'=>'10916561_w230_h230_mebel.jpg'
+                'image'=>'no_image.jpg'
             ],
             [
                 'name'=>'Надувная мебель',
                 'alias'=>'надув',
                 'parent_id'=>11,
-                'image'=>'10916580_w230_h230_naduvnaya-mebel.jpg'
+                'image'=>'no_image.jpg'
             ],
             [
                 'name'=>'Антикварная мебель',
                 'alias'=>'анттиквар',
                 'parent_id'=>11,
-                'image'=>'10916608_w230_h230_antikvarnaya-mebel.jpg'
+                'image'=>'no_image.jpg'
             ],
 
         ]);
@@ -301,7 +283,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'HP-2RR85EA',
                 'brand_id'=>1,
                 'price'=>441590,
-                'image'=>'77286631_w200_h200_noutbuk-hp-probook.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -311,7 +293,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Lenovo-ThinkPad',
                 'brand_id'=>2,
                 'price'=>160000,
-                'image'=>'117115501_w200_h200_noutbuk-lenovo-thinkpad.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -321,7 +303,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Acer-NX.EFAER.122',
                 'brand_id'=>3,
                 'price'=>110000,
-                'image'=>'115229591_w640_h640_noutbuk-acer-nxefaer122.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -331,7 +313,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Acer-NX.EFAER.025',
                 'brand_id'=>3,
                 'price'=>145000,
-                'image'=>'125363494_w640_h640_noutbuk-acer-ex2519.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -341,7 +323,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Asus-MX259H',
                 'brand_id'=>null,
                 'price'=>139000,
-                'image'=>'45894023_w640_h640_monitor-asus-mx259h.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -351,7 +333,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Acer-K202HQLAb',
                 'brand_id'=>null,
                 'price'=>56000,
-                'image'=>'87002914_w640_h640_monitor-acer-k202hqlab.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -361,7 +343,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Dell-SE2416H',
                 'brand_id'=>null,
                 'price'=>45134,
-                'image'=>'86584231_w640_h640_monitor-dell-se2416h.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -371,7 +353,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Пиджак',
                 'brand_id'=>null,
                 'price'=>4800,
-                'image'=>'101290132_w640_h640_pidzhak-shkolnyj-kolledzh.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -381,7 +363,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Платье',
                 'brand_id'=>null,
                 'price'=>14567,
-                'image'=>'122552292_w640_h640_plate-shkolnoe-so.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -392,7 +374,7 @@ class DatabaseSeeder extends Seeder
                 //'alias'=>'ONTHEGO-GM',
                 'brand_id'=>4,
                 'price'=>800000,
-                'image'=>'117961268_w640_h640_rubashka-muzhskaya-gongl.jpg'
+                'image'=>'no_image.jpg'
             ],
             [
                 'volume' => 1,
@@ -401,7 +383,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'shirt-supreme',
                 'brand_id'=>5,
                 'price'=>14490,
-                'image'=>'113491507_w640_h640_rubashka-red-polo.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -411,7 +393,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'p',
                 'brand_id'=>null,
                 'price'=>14800,
-                'image'=>'76660831_w640_h640_matras-naduvnoj-intex.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -421,7 +403,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'a',
                 'brand_id'=>null,
                 'price'=>14678,
-                'image'=>'9945242_w640_h640_krovat-naduvnaya-intex.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -431,7 +413,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'s',
                 'brand_id'=>null,
                 'price'=>500000,
-                'image'=>'96581051_w640_h640_stol-v-klassicheskom.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -441,7 +423,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'f',
                 'brand_id'=>null,
                 'price'=>640000,
-                'image'=>'96054813_w640_h640_vitrina-v-stile.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -451,7 +433,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Samsung-LS22F350FHIXCI',
                 'brand_id'=>6,
                 'price'=>64000,
-                'image'=>'106697615_w640_h640_led-monitor-samsung.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -461,7 +443,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Samsung LC34F791WQIXC',
                 'brand_id'=>6,
                 'price'=>388800,
-                'image'=>'75273701_w640_h640_monitor-samsung-lc34f791wqixci.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -471,7 +453,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'PHILIPS-234E5QHAW',
                 'brand_id'=>null,
                 'price'=>102000,
-                'image'=>'63786298_w640_h640_monitor-23-philips.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -481,7 +463,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'HP EliteDisplay E223',
                 'brand_id'=>1,
                 'price'=>93060,
-                'image'=>'113491986_w640_h640_monitor-hp-elitedisplay.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -491,7 +473,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Lenovo IP 110S',
                 'brand_id'=>2,
                 'price'=>95000,
-                'image'=>'90070173_w640_h640_noutbuk-lenovo-ip.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -501,7 +483,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Asus Zenbook UX333FA-A4181T',
                 'brand_id'=>null,
                 'price'=>120000,
-                'image'=>'109147879_w640_h640_noutbuk-asus-zenbook.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -511,7 +493,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Acer Swift 3 SF314-54-876H',
                 'brand_id'=>3,
                 'price'=>119000,
-                'image'=>'126476838_w640_h640_noutbuk-acer-swift.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -521,7 +503,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Lenovo Yoga S940-14IIL',
                 'brand_id'=>2,
                 'price'=>404000,
-                'image'=>'126568311_w640_h640_noutbuk-lenovo-yoga.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -531,7 +513,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'HP 1EP73EA EliteBook',
                 'brand_id'=>1,
                 'price'=>309000,
-                'image'=>'69643979_w640_h640_hp-1ep73ea-elitebook.jpg'
+                'image'=>'no_image.jpg'
 
             ],
             [
@@ -541,7 +523,7 @@ class DatabaseSeeder extends Seeder
                 'alias'=>'Apple MacBook 12',
                 'brand_id'=>7,
                 'price'=>719000,
-                'image'=>'106723960_w640_h640_noutbuk-apple-macbook.jpg'
+                'image'=>'no_image.jpg'
 
             ],
 
@@ -837,76 +819,6 @@ class DatabaseSeeder extends Seeder
                 'filter_value_id'=>8,
             ],
 
-        ]);
-        DB::table('product_images')->insert([
-            [
-                'product_id'=>16,
-                'image'=>'106697616_w640_h640_led-monitor-samsung.jpg'
-            ],
-            [
-                'product_id'=>16,
-                'image'=>'106697617_w640_h640_led-monitor-samsung.jpg'
-            ],
-            [
-                'product_id'=>16,
-                'image'=>'106697618_w640_h640_led-monitor-samsung.jpg'
-            ],
-            [
-                'product_id'=>17,
-                'image'=>'75273704_w640_h640_monitor-samsung-lc34f791wqixci.jpg'
-            ],
-            [
-                'product_id'=>19,
-                'image'=>'113491989_w640_h640_monitor-hp-elitedisplay.jpg'
-            ],
-            [
-                'product_id'=>19,
-                'image'=>'113492061_w640_h640_monitor-hp-elitedisplay.jpg'
-            ],
-            [
-                'product_id'=>19,
-                'image'=>'113492064_w640_h640_monitor-hp-elitedisplay.jpg'
-            ],
-            [
-                'product_id'=>20,
-                'image'=>'90070255_w640_h640_noutbuk-lenovo-ip.jpg'
-            ],
-            [
-                'product_id'=>20,
-                'image'=>'90070178_w640_h640_noutbuk-lenovo-ip.jpg'
-            ],
-            [
-                'product_id'=>22,
-                'image'=>'126476837_w640_h640_noutbuk-acer-swift.jpg'
-            ],
-            [
-                'product_id'=>23,
-                'image'=>'126568313_w640_h640_noutbuk-lenovo-yoga.jpg'
-            ],
-            [
-                'product_id'=>23,
-                'image'=>'126568314_w640_h640_noutbuk-lenovo-yoga.jpg'
-            ],
-            [
-                'product_id'=>24,
-                'image'=>'69643980_w640_h640_hp-1ep73ea-elitebook.jpg'
-            ],
-            [
-                'product_id'=>24,
-                'image'=>'69643982_w640_h640_hp-1ep73ea-elitebook.jpg'
-            ],
-            [
-                'product_id'=>25,
-                'image'=>'106723961_w640_h640_noutbuk-apple-macbook.jpg'
-            ],
-            [
-                'product_id'=>25,
-                'image'=>'106723962_w640_h640_noutbuk-apple-macbook.jpg'
-            ],
-            [
-                'product_id'=>25,
-                'image'=>'106723963_w640_h640_noutbuk-apple-macbook.jpg'
-            ],
         ]);
         // $this->call(UserSeeder::class);
     }
