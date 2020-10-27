@@ -35,6 +35,7 @@ Route::get('products',   'Api\ProductController@index')->name('products.index');
 Route::get('products/{product}', 'Api\ProductController@show')->name('products.show');
 
 Route::get('config', 'Api\ConfigController@configure');
+Route::get('passport', 'Api\ConfigController@passport');
 
 Route::get('categories', 'Api\CategoryController@index')->name('categories.index');
 Route::get('categories/{category}', 'Api\CategoryController@show')->name('categories.show');

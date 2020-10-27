@@ -42,11 +42,11 @@ class PassportController extends Controller
      */
     public function register(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:191',
-            'email' => 'required|string|email|max:191|unique:users',
-            'password' => 'required|string|min:6'
-        ]);
+//        $this->validate($request, [
+//            'name' => 'required|string|max:191',
+//            'email' => 'required|string|email|max:191|unique:users',
+//            'password' => 'required|string|min:6'
+//        ]);
 
         $user= User::create([
             'name' => $request['name'],
@@ -55,8 +55,7 @@ class PassportController extends Controller
             'email_verification_token' => Str::random(32),
             'reset_password_token'=>''
         ]);
-        Mail::to($user->email)->send(new VerificationEmail($user));
-
+//        Mail::to($user->email)->send(new VerificationEmail($user));
         return response()->json(['user'=> $user]);
     }
 
@@ -106,13 +105,13 @@ class PassportController extends Controller
         if (auth()->attempt($credentials)) {
 
             $user = auth()->user();
-            if($user->email_verified == 1) {
+            if($user) {
                 $token = $user->createToken('shop_api')->accessToken;
                 return response()->json([
                     'token' => $token,
                     'role' => $user->role]);
             }else {
-                return response()->json(['error' => 'Verify email'], 401);
+                return response()->json(['error' => 'Invalid cred'], 401);
             }
 
         }else {

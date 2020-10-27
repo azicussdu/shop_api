@@ -19,7 +19,7 @@ POST
 }
 ```
 
-##products
+##Список продуктов
 ###http://rossonero.kz/api/products
 ```
 get 
@@ -28,7 +28,7 @@ get
 ```
 
 
-##product
+##Конкретный продукт
 ###http://rossonero.kz/api/products/{id}
 ```
 get 
@@ -37,7 +37,7 @@ get
 ```
 
 
-##categories
+##Список категорий
 ###http://rossonero.kz/api/categories
 ```
 get 
@@ -46,7 +46,7 @@ get
 ```
 
 
-##category
+##Товары категории
 ###http://rossonero.kz/api/categories/{id}
 ```
 get 
