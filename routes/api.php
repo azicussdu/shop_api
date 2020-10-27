@@ -18,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 //Route::get('test', 'Api\PassportController@test');
+Route::post('make-order', 'Api\OrderController@store')->name('order.store');
 
-Route::post('login', 'Api\PassportController@login');
+Route::post('login', 'Api\PassportController@login')->name('login');
 Route::post('logout', 'Api\PassportController@logout');
 Route::post('register', 'Api\PassportController@register');
 Route::post('resetPassword', 'Api\PassportController@resetPassword');
@@ -32,6 +33,8 @@ Route::get('filterGroups',   'Api\FilterGroupController@index')->name('filterGro
 Route::get('filterGroups/{filterGroup}', 'Api\FilterGroupController@show')->name('filterGroups.show');
 
 Route::get('products',   'Api\ProductController@index')->name('products.index');
+Route::get('orders',   'Api\OrderController@index')->name('order.index');
+Route::get('cities',   'Api\CityController@index')->name('city.index');
 Route::get('products/{product}', 'Api\ProductController@show')->name('products.show');
 
 Route::get('config', 'Api\ConfigController@configure');
@@ -39,6 +42,7 @@ Route::get('passport', 'Api\ConfigController@passport');
 
 Route::get('categories', 'Api\CategoryController@index')->name('categories.index');
 Route::get('categories/{category}', 'Api\CategoryController@show')->name('categories.show');
+Route::post('addresses/add', 'Api\AddressController@store')->name('addadress');
 
 Route::middleware(['auth:api'])->group(function () {
     Route::apiResources([

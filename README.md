@@ -53,8 +53,39 @@ get
 {
 }
 ```
+
+Чтобы сделать заказ для начала нужно добавить адрес, куда доставлять
+Для этого пользователь должен выбрать город или населенный пункт
+###http://rossonero.kz/api/cities
+
+После чего берем айди города и добавляем адрес
+###http://rossonero.kz/api/addresses/add
+POST
+
 ```
-Route::get('users/addresses', 'Api\UserController@userAddresses');    Route::get('users/likes', 'Api\UserController@userLikes');
-Route::get('users/orders', 'Api\UserController@userOrders');
-Route::get('users/profile', 'Api\UserController@userProfile');
-```
+              'address'=>'required|max:255',
+                            'longitude'=>'required|max:255',
+                            'city_id'=>'required|max:255',
+                            'latitude'=>'required|max:255',
+                            'full_name'=>'required|max:255',
+                            'telephone_number'=>'required|max:255',
+                            'note'=>'nullable|max:255',
+
+``` 
+
+
+
+_______________________
+Driver
+   public function registerDriver(Request $request)
+    {
+
+        $user= User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'email_verification_token' => Str::random(32),
+            'reset_password_token'=>'',
+            'role_id' => 2
+
+Route::get('orders',   'Api\OrderController@index')->name('order.index');

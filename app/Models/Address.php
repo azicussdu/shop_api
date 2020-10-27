@@ -43,7 +43,9 @@ class Address extends Model
 		'address',
 		'full_name',
 		'telephone_number',
-		'note'
+		'note',
+         'latitude',
+        'longitude'
 	];
 
 	protected $with = [
