@@ -53,14 +53,15 @@ get
 {
 }
 ```
-
-Чтобы сделать заказ для начала нужно добавить адрес, куда доставлять
-Для этого пользователь должен выбрать город или населенный пункт
-###http://rossonero.kz/api/cities
-
-После чего берем айди города и добавляем адрес
-###http://rossonero.kz/api/addresses/add
-POST
+##Make order
+###http://rossonero.kz/api/make-order
+```
+post 
+{
+    "user_id" : 1,
+    "products" : [1, 2, 3]
+}
+```
 
 ```
               'address'=>'required|max:255',

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\OrderProduct;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -52,19 +53,21 @@ class OrderController extends Controller
     {
         $this->validate($request,[
             'user_id'=>'required|numeric|digits_between:1,20',
-            'address_id'=>'required|numeric|digits_between:1,20'
+//            'address_id'=>'required|numeric|digits_between:1,20'
         ]);
         $order = Order::create([
             'user_id'=>$request['user_id'],
             'status'=>1,
             'currency_id'=>1,
             'sum'=>$request['sum'],
-            'address_id'=>$request['address_id'],
+//            'address_id'=>$request['address_id'],
         ]);
-        foreach ($request->input('products') as $product){
-            $order->products()->attach([
-                $product['id']=>['price'=>$product['price'], 'pieces'=>$product['pieces']]
-            ]);
+        $order->save();
+        foreach ($request["products"] as $product){
+            $op = new OrderProduct();
+            $op->product_id = $product;
+            $op->order_id = $order->id;
+            $op->save();
         }
         return new JsonResource($order);
     }

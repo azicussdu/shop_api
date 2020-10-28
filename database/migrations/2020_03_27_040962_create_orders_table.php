@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->enum('status',['0','1','2'])->default(0);
             $table->integer('currency_id')->unsigned();
             $table->foreign('currency_id')->references('id')->on('currencies')->onDelete('cascade')->onUpdate('cascade');
-            $table->bigInteger('address_id')->unsigned();
+            $table->bigInteger('address_id')->unsigned()->nullable();
             $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
             $table->softDeletes();
