@@ -23,6 +23,7 @@ Route::post('make-order', 'Api\OrderController@store')->name('order.store');
 Route::post('login', 'Api\PassportController@login')->name('login');
 Route::post('logout', 'Api\PassportController@logout');
 Route::post('register', 'Api\PassportController@register');
+Route::post('register-driver', 'Api\PassportController@registerDriver');
 Route::post('resetPassword', 'Api\PassportController@resetPassword');
 Route::post('users/resetPassword', 'Api\UserController@resetPassword')->name('users.resetPassword');
 
@@ -34,6 +35,8 @@ Route::get('filterGroups/{filterGroup}', 'Api\FilterGroupController@show')->name
 
 Route::get('products',   'Api\ProductController@index')->name('products.index');
 Route::get('orders',   'Api\OrderController@index')->name('order.index');
+Route::post('accept-order',   'Api\OrderController@accept')->name('order.accept');
+Route::post('decline-order',   'Api\OrderController@decline')->name('order.decline');
 Route::get('cities',   'Api\CityController@index')->name('city.index');
 Route::get('products/{product}', 'Api\ProductController@show')->name('products.show');
 
@@ -81,7 +84,7 @@ Route::middleware(['auth:api', 'can:isAdmin'])->group(function (){
         'currencies' => 'Api\CurrencyController',
 //        'filterGroups' => 'Api\FilterGroupController',
         'filterValues' => 'Api\FilterValueController',
-        'orders' => 'Api\OrderController',
+//        'orders' => 'Api\OrderController',
         'productImages' => 'Api\ProductImageController',
         'regions' => 'Api\RegionController',
         'roles' => 'Api\RoleController',

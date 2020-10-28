@@ -89,6 +89,21 @@ class OrderController extends Controller
         return new JsonResource(Order::with(['products', 'currency', 'user', 'address'])->findOrFail($id));
     }
 
+    public function accept(Request $request){
+//        $order = Order::where('id', $request->id)->first();
+//        $order->status = '2';
+//        $order->driver_id = $request->user_id;
+//        $order->save();
+        return ['success' => true];
+    }
+
+    public function decline(Request $request){
+//        $order = Order::where('id', $request->id)->first();
+//        $order->status = 3;
+//        $order->status = 3;
+//        $order->save();
+        return ['success' => true];
+    }
     /**
      * Update the specified order in storage.
      * @authenticated

@@ -90,5 +90,21 @@ Driver
             'email_verification_token' => Str::random(32),
             'reset_password_token'=>'',
             'role_id' => 2
-
+##// List of orders
 Route::get('orders',   'Api\OrderController@index')->name('order.index');
+
+##accept order
+###/api/accept-order
+```
+post
+    "id" : "3",
+    "user_id" : "1",
+```
+
+##decline order
+###/api/decline-order
+```
+post
+    "id" : "3",
+    "user_id" : "1",
+```
