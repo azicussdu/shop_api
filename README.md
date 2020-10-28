@@ -80,6 +80,8 @@ post
 
 _______________________
 Driver
+
+####/api/register-driver
    public function registerDriver(Request $request)
     {
 
