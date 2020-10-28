@@ -52,7 +52,8 @@ class Order extends Model
         'longitude',
 	];
     protected $with = [
-        'products'
+        'products',
+        'address'
     ];
 
 	public function address()
