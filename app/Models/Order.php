@@ -48,6 +48,8 @@ class Order extends Model
 		'currency_id',
 		'address_id',
         'driver_id',
+        'latitude',
+        'longitude',
 	];
     protected $with = [
         'products'

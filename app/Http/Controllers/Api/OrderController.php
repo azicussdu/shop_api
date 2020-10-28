@@ -55,14 +55,17 @@ class OrderController extends Controller
             'user_id'=>'required|numeric|digits_between:1,20',
 //            'address_id'=>'required|numeric|digits_between:1,20'
         ]);
+//        dd($request);
         $order = Order::create([
             'user_id'=>$request['user_id'],
             'status'=>1,
             'currency_id'=>1,
             'sum'=>$request['sum'],
-//            'address_id'=>$request['address_id'],
+            'latitude'=>$request['latitude'],
+            'longitude'=>$request['longitude'],
         ]);
-        $order->save();
+
+//        $order->save();
         foreach ($request["products"] as $product){
             $op = new OrderProduct();
             $op->product_id = $product;

@@ -59,6 +59,8 @@ get
 post 
 {
     "user_id" : 1,
+    "latitude" : "123123",
+    "longitude" : "123123",
     "products" : [1, 2, 3]
 }
 ```
