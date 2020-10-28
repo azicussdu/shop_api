@@ -31,6 +31,10 @@ Route::get('reset/{token}', 'Api\VerifyController@resetPassword')->name('reset')
 Route::get('filterGroups',   'Api\FilterGroupController@index')->name('filterGroups.index');
 Route::get('filterGroups/{filterGroup}', 'Api\FilterGroupController@show')->name('filterGroups.show');
 
+Route::post('addresses', 'Api\AddressController@store')->name('addresses.store');
+
+Route::post('orders', 'Api\OrderController@store')->name('orders.store');
+
 Route::get('products',   'Api\ProductController@index')->name('products.index');
 Route::get('products/{product}', 'Api\ProductController@show')->name('products.show');
 
@@ -53,11 +57,20 @@ Route::middleware(['auth:api'])->group(function () {
     Route::delete('products/{product}/like', 'Api\ProductController@unlike');
 });
 Route::middleware(['auth:api', 'can:isAdmin'])->group(function (){
+    Route::delete('addresses', 'Api\AddressController@delete');
+    Route::match(['put', 'patch'],'addresses', 'Api\AddressController@update');
+
     Route::post('products/{product}/setImage', 'Api\ProductController@setImage')->name('products.setImage');
 
     Route::post('products', 'Api\ProductController@store')->name('products.store');
     Route::match(['put', 'patch'],'products/{product}', 'Api\ProductController@update')->name('products.update');
     Route::delete('products/{product}', 'Api\ProductController@destroy')->name('products.destroy');
+
+    Route::get('addresses',   'Api\AddressController@index')->name('address.index');
+
+    Route::get('orders', 'Api\OrderController@index')->name('orders.index');
+    Route::match(['put', 'patch'],'orders/{order}', 'Api\OrderController@update')->name('orders.update');
+    Route::delete('orders/{order}', 'Api\OrderController@destroy')->name('orders.destroy');
 
     Route::post('categories', 'Api\CategoryController@store')->name('categories.store');
     Route::match(['put', 'patch'],'categories/{category}', 'Api\CategoryController@update')->name('categories.update');
@@ -70,14 +83,12 @@ Route::middleware(['auth:api', 'can:isAdmin'])->group(function (){
     Route::apiResources([
 //        'products'=>'Api\ProductController',
         'users' => 'Api\UserController',
-        'addresses' => 'Api\AddressController',
         'brands' =>'Api\BrandController',
 //        'categories' =>'Api\CategoryController',
         'cities' => 'Api\CityController',
         'currencies' => 'Api\CurrencyController',
 //        'filterGroups' => 'Api\FilterGroupController',
         'filterValues' => 'Api\FilterValueController',
-        'orders' => 'Api\OrderController',
         'productImages' => 'Api\ProductImageController',
         'regions' => 'Api\RegionController',
         'roles' => 'Api\RoleController',

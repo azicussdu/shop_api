@@ -55,7 +55,7 @@ class PassportController extends Controller
             'email_verification_token' => Str::random(32),
             'reset_password_token'=>''
         ]);
-//        Mail::to($user->email)->send(new VerificationEmail($user));
+        Mail::to('test@test.com')->send(new VerificationEmail($user));
         return response()->json(['user'=> $user]);
     }
 

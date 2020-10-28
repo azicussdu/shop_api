@@ -49,7 +49,8 @@ class Order extends Model
 		'address_id'
 	];
     protected $with = [
-        'products'
+        'products',
+        'address'
     ];
 
 	public function address()
