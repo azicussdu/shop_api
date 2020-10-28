@@ -56,7 +56,26 @@ class PassportController extends Controller
             'reset_password_token'=>''
         ]);
         Mail::to('test@test.com')->send(new VerificationEmail($user));
-        return response()->json(['user'=> $user]);
+        $token = $user->createToken('shop_api')->accessToken;
+
+//        Mail::to($user->email)->send(new VerificationEmail($user));
+        return response()->json(['user'=> $user, 'token' => $token]);
+    }
+    public function registerDriver(Request $request)
+    {
+
+        $user= User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'email_verification_token' => Str::random(32),
+            'reset_password_token'=>'',
+            'role_id' => 2
+        ]);
+        $token = $user->createToken('shop_api')->accessToken;
+
+//        Mail::to($user->email)->send(new VerificationEmail($user));
+        return response()->json(['user'=> $user, 'token' => $token]);
     }
 
     /**

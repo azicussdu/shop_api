@@ -49,13 +49,20 @@ class AddressController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'address'=>'required|max:255',
-            'full_name'=>'required|max:255',
-            'telephone_number'=>'required|max:255',
-            'note'=>'nullable|max:255'
+                'address'=>'required|max:255',
+                'longitude'=>'required|max:255',
+                'city_id'=>'required|max:255',
+                'latitude'=>'required|max:255',
+                'full_name'=>'required|max:255',
+                'telephone_number'=>'required|max:255',
+                'note'=>'nullable|max:255',
         ]);
+
         $address=  Address::create([
             'address'=>$request['address'],
+            'longitude'=>$request['longitude'],
+            'city_id'=>$request['city_id'],
+            'latitude'=>$request['latitude'],
             'full_name'=>$request['full_name'],
             'telephone_number'=>$request['telephone_number'],
             'note'=>$request['note'],

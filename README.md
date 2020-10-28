@@ -53,8 +53,42 @@ get
 {
 }
 ```
+##Make order
+###http://rossonero.kz/api/make-order
 ```
-Route::get('users/addresses', 'Api\UserController@userAddresses');    Route::get('users/likes', 'Api\UserController@userLikes');
-Route::get('users/orders', 'Api\UserController@userOrders');
-Route::get('users/profile', 'Api\UserController@userProfile');
+post 
+{
+    "user_id" : 1,
+    "latitude" : "123123",
+    "longitude" : "123123",
+    "products" : [1, 2, 3]
+}
 ```
+
+```
+              'address'=>'required|max:255',
+                            'longitude'=>'required|max:255',
+                            'city_id'=>'required|max:255',
+                            'latitude'=>'required|max:255',
+                            'full_name'=>'required|max:255',
+                            'telephone_number'=>'required|max:255',
+                            'note'=>'nullable|max:255',
+
+``` 
+
+
+
+_______________________
+Driver
+   public function registerDriver(Request $request)
+    {
+
+        $user= User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'email_verification_token' => Str::random(32),
+            'reset_password_token'=>'',
+            'role_id' => 2
+
+Route::get('orders',   'Api\OrderController@index')->name('order.index');

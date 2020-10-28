@@ -46,7 +46,10 @@ class Order extends Model
 		'user_id',
 		'status',
 		'currency_id',
-		'address_id'
+		'address_id',
+        'driver_id',
+        'latitude',
+        'longitude',
 	];
     protected $with = [
         'products',
@@ -68,6 +71,10 @@ class Order extends Model
 		return $this->belongsTo(User::class);
 	}
 
+    public function driver()
+    {
+        return $this->belongsTo(User::class);
+    }
 	public function products()
 	{
 		return $this->belongsToMany(Product::class)
